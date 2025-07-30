@@ -1,0 +1,24 @@
+<div class="bg-thread mb-10   py-10 px-5 relative">
+    <div class="mb-8">
+      <h2 class="font-bold text-3xl">Featured news</h2>
+    </div>
+    
+    <div class="slider-container">
+      <div class="slider-wrapper" 
+           [style.transform]="'translateX(' + translateX + 'px)'"
+           [style.transition]="isTransitioning ? 'transform 0.5s ease' : 'none'">
+        <div class="news-card" *ngFor="let item of displayItems; trackBy: trackByFn">
+          <div class="card-header">
+            <span class="category">{{ item.category }}</span>
+          </div>
+          <div class="card-content">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+          </div>
+          <div class="card-image">
+            <img [src]="item.image" [alt]="item.title">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

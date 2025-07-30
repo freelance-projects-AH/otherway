@@ -17,9 +17,9 @@ export class ThemeToggleService {
   console.log('[ThemeService] savedTheme =', savedTheme);
     console.log('[ThemeService] prefersDark =', prefersDark);
     if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-      this.enableDarkMode();
-    } else {
       this.enableLightMode();
+    } else {
+      this.enableDarkMode();
     }
   }, 0);
   }

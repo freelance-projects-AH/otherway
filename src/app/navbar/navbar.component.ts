@@ -7,7 +7,8 @@ import { ThemeToggleComponent } from "../theme-toggle/theme-toggle.component";
   selector: 'app-navbar',
   imports: [CommonModule, RouterModule, ThemeToggleComponent],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrl: './navbar.component.css',
+  
 })
 export class NavbarComponent {
  isMobileMenuOpen = false;

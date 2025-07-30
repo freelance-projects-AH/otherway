@@ -1,0 +1,10 @@
+.fixed {
+  position: fixed;
+}
+
+.absolute {
+  position: absolute;
+}
+#videoContainer {
+  transition: all 0.4s ease-in-out;
+}

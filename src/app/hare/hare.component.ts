@@ -22,10 +22,9 @@ export class HareComponent implements AfterViewInit {
   constructor(private renderer: Renderer2) {}
 
   ngAfterViewInit(): void {
-    // نحاول نجيب العنصر بعد ما الصفحة ترندر
     setTimeout(() => {
       this.stopTriggerElement = document.getElementById('text-stop-trigger');
-      this.onWindowScroll(); // أول تشيك
+      this.onWindowScroll();
     }, 0);
   }
 
@@ -34,7 +33,6 @@ export class HareComponent implements AfterViewInit {
     const video = this.videoContainer.nativeElement;
     const text = this.textContainer.nativeElement;
 
-    // 1. سلوك الفيديو
     const videoTriggerTop = this.textSection.nativeElement.getBoundingClientRect().top;
     if (videoTriggerTop <= 0) {
       this.renderer.removeClass(video, 'fixed');
@@ -44,7 +42,6 @@ export class HareComponent implements AfterViewInit {
       this.renderer.addClass(video, 'fixed');
     }
 
-    // 2. سلوك الكلام
     const textStartTop = this.textSection.nativeElement.getBoundingClientRect().top;
     const textStopTop = this.stopTriggerElement?.getBoundingClientRect().top ?? Infinity;
 

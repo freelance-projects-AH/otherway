@@ -26,6 +26,7 @@
 body {
   background-image: linear-gradient(#fff,#fff 49%,#f5bac5);
   color: #000000;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Dark mode */

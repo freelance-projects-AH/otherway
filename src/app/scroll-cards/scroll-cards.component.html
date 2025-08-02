@@ -1,0 +1,29 @@
+<!-- card-carousel.component.html -->
+<div 
+  [class.fixed]="isFixed"
+  class="w-full bg-white py-8 transition-all duration-300"
+  [class.top-0]="isFixed"
+  [class.left-0]="isFixed"
+  [class.right-0]="isFixed"
+  [class.shadow-lg]="isFixed"
+  [style.zIndex]="isFixed ? '100' : 'auto'"
+>
+  <div class="container mx-auto px-4">
+    <div class="relative h-96 overflow-hidden">
+      <div 
+        *ngFor="let card of cards; let i = index"
+        [@slideFade]="getAnimationState(i)"
+        class="absolute w-1/3 px-4"
+        [style.left]="((i - currentIndex) * 33.33) + '%'"
+        [style.transition]="'left 500ms ease-in-out'"
+      >
+        <div class="bg-gray-100 rounded-lg shadow-md p-6 h-80">
+          <h3 class="text-xl font-bold mb-2">{{ card.title }}</h3>
+          <p class="text-gray-600">{{ card.content }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div [style.height]="isFixed ? '28rem' : '0'" class="transition-all duration-300"></div>

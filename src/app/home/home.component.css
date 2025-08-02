@@ -1,0 +1,10 @@
+.background-sections {
+  background-image: linear-gradient(#fff,#fff 49%,#f5bac5);
+  color: #000000;
+
+}
+.background-sections-dark{
+    background-image: none;
+
+  @apply bg-dark-background text-dark-fontSecondary;
+}

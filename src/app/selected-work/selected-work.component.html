@@ -1,8 +1,7 @@
-<div id="text-stop-trigger"></div>
-<section  class="mx-[20px] px-4 py-10 ">
-  <h2 class="text-6xl font-bold mb-[152px]">Selected work</h2>
+<section class="mx-[20px] px-4 py-10">
+  <h2 class="text-6xl font-bold mb-[152px] text-fontPrimary">Selected work</h2>
 
-  <div class="mx-4 grid grid-cols-1 md:grid-cols-2 gap-5 auto-rows-auto">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5 auto-rows-auto">
     <app-project-card
       mediaType="video"
       src="https://player.vimeo.com/progressive_redirect/playback/1076056155/rendition/720p/file.mp4?loc=external&log_user=0&signature=ad72820c5787833e5e300919b59bb8ffb6988084569ccd83a38af0980ff88476"
@@ -31,5 +30,19 @@
     ></app-project-card>
 
     <!-- Add more items as needed -->
+  </div>
+  <div class="flex justify-center mt-20 dark:text-white">
+   <p class="text-4xl md:text-7xl font-semibold cursor-pointer">
+  <a
+    routerLink="/work"
+    class="group relative inline-block overflow-hidden"
+  >
+    <span><i class="fa-solid fa-arrow-right"></i></span> See all work
+    <span
+      class="absolute bottom-0 left-0 w-full h-[2px] bg-black dark:bg-white scale-x-0 origin-right transition-transform duration-300 group-hover:scale-x-100 group-hover:origin-left"
+    ></span>
+  </a>
+</p>
+
   </div>
 </section>

@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input,Output, EventEmitter  } from '@angular/core';
 
 @Component({
   selector: 'app-project-card',
@@ -12,4 +12,8 @@ export class ProjectCardComponent {
   @Input() src = '';
   @Input() title = '';
   @Input() description = '';
-}         
+   @Output() cardClick = new EventEmitter<void>();
+    onCardClick() {
+    this.cardClick.emit();
+  }
+}

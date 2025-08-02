@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { filter } from 'rxjs';
+import { ThemeToggleComponent } from '../../theme-toggle/theme-toggle.component';
 
 @Component({
   selector: 'app-navbar2',
-  imports: [CommonModule,RouterModule],
+  imports: [CommonModule,RouterModule,ThemeToggleComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })

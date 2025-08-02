@@ -29,14 +29,14 @@
 }
 
 .news-card {
-  min-width: 350px;
-  height: 400px;
+  min-width: 460px;
   border-radius: 12px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   background-color: white;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  height: auto; 
 }
 
 .card-header {

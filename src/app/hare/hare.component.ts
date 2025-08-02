@@ -55,5 +55,6 @@ export class HareComponent implements AfterViewInit {
       this.renderer.setStyle(text, 'position', 'absolute');
       this.renderer.setStyle(text, 'top', '0');
     }
+    
   }
 }

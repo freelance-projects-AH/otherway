@@ -8,13 +8,6 @@ import { Component, HostListener } from '@angular/core';
   styleUrl: './carousel.component.css'
 })
 export class CarouselComponent {
-  currentIndex = 0;
-  slideWidth = 370; // card width + gap
-  translateX = 0;
-  isTransitioning = true;
-  displayItems:any = [];
-  private autoSlideInterval: any;
-
   newsItems:any = [
     {
       id: 1,
@@ -59,6 +52,13 @@ export class CarouselComponent {
       category: "Design"
     }
   ];
+  currentIndex = 0;
+  slideWidth = 370; // card width + gap
+  translateX = 0;
+  isTransitioning = true;
+  displayItems:any = [];
+  private autoSlideInterval: any;
+
 
   ngOnInit() {
     this.setupInfiniteLoop();
@@ -112,4 +112,5 @@ export class CarouselComponent {
       }, 500); // Wait for transition to complete
     }
   }
+  
 }

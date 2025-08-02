@@ -1,25 +1,71 @@
 @keyframes moveBox {
   0% {
-    left: -50px;
+    left: -125px;
     opacity: 0;
   }
   10% {
     opacity: 1;
   }
   90% {
-    left: calc(100% - 20px);
+    left: calc(80% - 60px);
     opacity: 1;
   }
   100% {
-    left: calc(100% - 20px);
+    left: calc(80% - 50px);
+    opacity: 1;
+  }
+}
+@keyframes shrinkRight  {
+  0% {
+    clip-path: inset(0 0 0 0); /* Fully visible */
+  }
+  100% {
+    clip-path: inset(0 0 0 50%); /* Right half erased */
+  }
+}
+
+@keyframes moveBoxReversed {
+  0% {
+    right: -150px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    right: calc(50% - 60px);
+    opacity: 1;
+  }
+  100% {
+    right: calc(50% - 60px);
     opacity: 0;
   }
 }
 
+.text {
+  position: absolute;
+  top: 0;
+  right: -150px;
+  animation: 
+    moveBoxReversed 4s linear infinite,
+    shrinkRight 4s linear infinite;
+      z-index: 10;
+
+}
+
+
 .box {
   position: absolute;
-  top: 5px;
-  left: -50px;
-  animation: moveBox 3s linear infinite;
-  z-index: 2;
+  top: -2px;
+  left: -150px;
+  animation: moveBox 4s linear infinite;
+  z-index: 50;
 }
+svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+ #nav-section {
+  mix-blend-mode: difference;
+ }

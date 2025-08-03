@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { ProjectCardComponent } from '../project-card/project-card.component';
 import { Router } from '@angular/router';
-interface MediaItem {
+import { HeroTwoComponent } from '../hero-two/hero-two.component';
+export interface MediaItem {
   index: number;
   file_link: string;
   file_type: string;
 }
 
-interface Project {
+export interface Project {
   _id: string;
   title: string;
   description: string;
@@ -17,14 +18,14 @@ interface Project {
   media: MediaItem[];
 }
 
-interface ApiResponse {
+export interface ApiResponse {
   projects: Project[];
   allCategories: string[];
 }
 
 @Component({
   selector: 'app-work',
-  imports: [ProjectCardComponent,CommonModule],
+  imports: [ProjectCardComponent,CommonModule,HeroTwoComponent],
   templateUrl: './work.component.html',
   styleUrl: './work.component.css'
 })
@@ -45,7 +46,7 @@ export class WorkComponent implements OnInit {
   }
 
   loadCategories() {
-    const url = `http://93.127.202.37:3100/api/projects`;
+    const url = `https://real-estate-backend-pi-steel.vercel.app/api/projects`;
 
     this.http.get<ApiResponse>(url).subscribe({
       next: (data) => {
@@ -82,7 +83,7 @@ export class WorkComponent implements OnInit {
   loadProjects() {
     this.loading = true;
     const category = this.activeTab === 'all' ? '' : this.activeTab;
-    const url = `http://93.127.202.37:3100/api/projects${category ? `?category=${category}` : ''}`;
+    const url = `https://real-estate-backend-pi-steel.vercel.app/api/projects${category ? `?category=${category}` : ''}`;
 
     this.http.get<ApiResponse>(url).subscribe({
       next: (data) => {

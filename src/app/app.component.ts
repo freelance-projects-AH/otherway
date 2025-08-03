@@ -26,7 +26,7 @@ export class AppComponent {
   console.log('[AppComponent] ThemeToggleService injected');
   }
   
- showNavbar = true;
+ showNavbar = false;
 
  
 

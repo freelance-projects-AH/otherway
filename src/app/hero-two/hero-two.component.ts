@@ -1,22 +1,14 @@
-import {
-  Component,
-  ElementRef,
-  HostListener,
-  Renderer2,
-  ViewChild,
-  AfterViewInit,
-  Output,
-  EventEmitter,
-} from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, HostListener, Output, Renderer2, ViewChild } from '@angular/core';
 import { NavbarVisibilityService } from '../navbar-visibility.service';
 
 @Component({
-  selector: 'app-hare',
-  templateUrl: './hare.component.html',
-  styleUrls: ['./hare.component.css'],
+  selector: 'app-hero-two',
+  imports: [],
+  templateUrl: './hero-two.component.html',
+  styleUrl: './hero-two.component.css'
 })
-export class HareComponent implements AfterViewInit {
-  @ViewChild('videoContainer') videoContainer!: ElementRef;
+export class HeroTwoComponent implements AfterViewInit{
+@ViewChild('videoContainer') videoContainer!: ElementRef;
   @ViewChild('textContainer') textContainer!: ElementRef;
   @ViewChild('textSection') textSection!: ElementRef;
   @ViewChild('textStopTrigger') textStopTrigger!: ElementRef;
@@ -32,7 +24,7 @@ export class HareComponent implements AfterViewInit {
     setTimeout(() => {
       this.stopTriggerElement = document.getElementById('text-stop-trigger');
       this.onWindowScroll();
-      
+     
   
     }, 0);
     
@@ -55,7 +47,6 @@ export class HareComponent implements AfterViewInit {
     const textSection = this.textSection.nativeElement.getBoundingClientRect();
     const textStopTop = this.stopTriggerElement?.getBoundingClientRect().top ?? Infinity;
     const textStartTop=textSection.top
-    console.log(textStartTop, textStopTop);
    
 let scrollBuffer = 650;
 
@@ -97,6 +88,7 @@ else {
   // this.renderer.setStyle(text, 'position', 'absolute');
   this.renderer.setStyle(text, 'display', 'none'); // إخفاء النص
 }
+    
 const triggerElement = this.triggerSection.nativeElement;
   const triggerRect = triggerElement.getBoundingClientRect();
   const triggerTop = triggerRect.top;
@@ -108,6 +100,5 @@ const triggerElement = this.triggerSection.nativeElement;
   } else {
     this.navbarVisibilityService.setVisibility(false);
   }
-    
   }
 }

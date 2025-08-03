@@ -8,21 +8,21 @@
   transition: transform 0.5s ease;
   gap: 20px;
   padding-right: 10px; 
-  align-items: flex-start;
 }
 
 .news-card {
-  flex: 0 0 auto;
   width: 90%;
   max-width: 90%;
   border-radius: 12px;
   padding: 20px;
   display: flex;
   flex-direction: column;
+  flex: 1 0 auto;
   background-color: white;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  height: auto;
+
 }
+
 
 .card-header {
   margin-bottom: 15px;

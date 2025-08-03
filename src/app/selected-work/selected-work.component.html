@@ -1,48 +1,40 @@
 <section class="mx-[20px] px-4 py-10">
   <h2 class="text-6xl font-bold mb-[152px] text-fontPrimary">Selected work</h2>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-5 auto-rows-auto">
-    <app-project-card
-      mediaType="video"
-      src="https://player.vimeo.com/progressive_redirect/playback/1076056155/rendition/720p/file.mp4?loc=external&log_user=0&signature=ad72820c5787833e5e300919b59bb8ffb6988084569ccd83a38af0980ff88476"
-      title="Naked Paper"
-      description="Repositioning green to be brown"
-    ></app-project-card>
+  <div
+    *ngIf="loading"
+    class="mx-4 grid grid-cols-1 lg:grid-cols-2 gap-5 auto-rows-auto"
+  >
 
-    <app-project-card
-      mediaType="video"
-      src="https://player.vimeo.com/progressive_redirect/playback/1047148931/rendition/1080p/file.mp4?loc=external&log_user=0&signature=ca9e98774163c4e0a1d5e88493d66f4961d58e313d6cc98a421a1a3fec42bed5"
-      title="Rocket"
-      description="Rebranding the American dream"
-    ></app-project-card>
+    <ng-container *ngFor="let project of [1, 2, 3, 4, 5, 6]; let i = index">
+      <div
+        class="relative overflow-hidden rounded-lg bg-gray-300 aspect-video animate-pulse"
+      ></div>
+    </ng-container>
+  </div>
 
+  <div
+    *ngIf="!loading"
+    class="mx-4 grid grid-cols-1 lg:grid-cols-2 gap-5 auto-rows-auto"
+  >
     <app-project-card
-      mediaType="image"
-      src="https://cdn.prod.website-files.com/659e5b9da11fe08d8580047a/685bbec71dde1a7cfd9d2681_01_Left_02.png"
-      title="Fortnum & Mason"
-      description="Transforming a British icon for the future"
+      *ngFor="let project of projects"
+      [mediaType]="getPrimaryMedia(project)?.mediaType || 'image'"
+      [src]="getPrimaryMedia(project)?.src || ''"
+      [title]="project.title"
+      [description]="project.description"
+      (click)="onProjectCardClick(project)"
+      class="cursor-pointer hover:scale-105 transition-transform duration-200"
     ></app-project-card>
-    <app-project-card
-      mediaType="video"
-      src="https://player.vimeo.com/progressive_redirect/playback/1088468109/rendition/1080p/file.mp4?loc=external&log_user=0&signature=2b82fd606d67d7fe7fbbe9a83a1f9530ff91174df09c6170a48e244abc1e7864"
-      title="Fortnum & Mason"
-      description="Transforming a British icon for the future"
-    ></app-project-card>
-
-    <!-- Add more items as needed -->
   </div>
   <div class="flex justify-center mt-20 dark:text-white">
-   <p class="text-4xl md:text-7xl font-semibold cursor-pointer">
-  <a
-    routerLink="/work"
-    class="group relative inline-block overflow-hidden"
-  >
-    <span><i class="fa-solid fa-arrow-right"></i></span> See all work
-    <span
-      class="absolute bottom-0 left-0 w-full h-[2px] bg-black dark:bg-white scale-x-0 origin-right transition-transform duration-300 group-hover:scale-x-100 group-hover:origin-left"
-    ></span>
-  </a>
-</p>
-
+    <p class="text-4xl md:text-7xl font-semibold cursor-pointer">
+      <a routerLink="/work" class="group relative inline-block overflow-hidden">
+        <span><i class="fa-solid fa-arrow-right"></i></span> See all work
+        <span
+          class="absolute bottom-0 left-0 w-full h-[2px] bg-black dark:bg-white scale-x-0 origin-right transition-transform duration-300 group-hover:scale-x-100 group-hover:origin-left"
+        ></span>
+      </a>
+    </p>
   </div>
 </section>

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { MediaGalleryComponent } from "../media-gallery/media-gallery.component";
+import { HeroTwoComponent } from '../hero-two/hero-two.component';
 
 interface MediaItem {
   index: number;
@@ -22,7 +23,7 @@ interface Project {
 
 @Component({
   selector: 'app-project-details',
-  imports: [CommonModule, MediaGalleryComponent],
+  imports: [CommonModule, MediaGalleryComponent,HeroTwoComponent],
   templateUrl: './project-details.component.html',
   styleUrl: './project-details.component.css'
 })

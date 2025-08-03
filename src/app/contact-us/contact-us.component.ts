@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HeroTwoComponent } from '../hero-two/hero-two.component';
 @Component({
   selector: 'app-contact-us',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule,HeroTwoComponent],
   templateUrl: './contact-us.component.html',
   styleUrl: './contact-us.component.css'
 })

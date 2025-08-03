@@ -55,7 +55,7 @@ project: Project | null = null;
     this.error = false;
 
 
-    const url = `http://93.127.202.37:3100/api/projects/${projectId}`;
+    const url = `https://real-estate-backend-pi-steel.vercel.app/api/projects/${projectId}`;
 
     this.http.get<Project>(url).subscribe({
       next: (data) => {

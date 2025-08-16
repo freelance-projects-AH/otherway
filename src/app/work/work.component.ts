@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { ProjectCardComponent } from '../project-card/project-card.component';
 import { Router } from '@angular/router';
 import { HeroTwoComponent } from '../hero-two/hero-two.component';
+import { IconsComponent } from '../icons/icons.component';
+import { CarouselComponent } from '../carousel/carousel.component';
 export interface MediaItem {
   index: number;
   file_link: string;
@@ -25,7 +27,7 @@ export interface ApiResponse {
 
 @Component({
   selector: 'app-work',
-  imports: [ProjectCardComponent,CommonModule,HeroTwoComponent],
+  imports: [ProjectCardComponent,CommonModule,HeroTwoComponent,IconsComponent,CarouselComponent],
   templateUrl: './work.component.html',
   styleUrl: './work.component.css'
 })
@@ -117,6 +119,8 @@ export class WorkComponent implements OnInit {
     };
   }
     onProjectCardClick(project: Project) {
+          localStorage.setItem('projectName', project.title);
+
     this.router.navigate(['/project-details', project._id]);
   }
 }

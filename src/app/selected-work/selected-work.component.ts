@@ -71,6 +71,7 @@ loadProjects() {
     return videoTypes.some(type => fileType.toLowerCase().includes(type)) ? 'video' : 'image';
   }
      onProjectCardClick(project: Project) {
+    localStorage.setItem('projectName', project.title);
     this.router.navigate(['/project-details', project._id]);
   }
 }

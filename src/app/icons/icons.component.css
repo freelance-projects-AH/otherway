@@ -13,7 +13,7 @@
 .marquee {
   width: var(--marquee-width);
   height: 130px;
-  background-color: #AF8255;
+  background-color: #FFFFFF;
   color: #eee;
   overflow: hidden;
   position: relative;
@@ -29,11 +29,11 @@
 }
 .marquee:before {
   left: 0;
-  background: linear-gradient(to right, #d09423 0%, transparent 25%);
+  background: linear-gradient(to right, #AF8255 0%, transparent 25%);
 }
 .marquee:after {
   right: 0;
-  background: linear-gradient(to left, #d09423 0%, transparent 25%);
+  background: linear-gradient(to left, #AF8255 0%, transparent 25%);
 }
 .marquee-content {
   list-style: none;

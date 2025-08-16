@@ -32,9 +32,15 @@ export class NavbarComponent2  {
   }
 
   getPageTitle(url: string): string {
-    const segments = url.split('/');
-    return segments[1]?.charAt(0).toUpperCase() + segments[1]?.slice(1) || 'Home';
+  const segments = url.split('/');
+
+  if (segments[1] === 'project-details') {
+    const projectName = localStorage.getItem('projectName');
+    return projectName ? projectName : 'Project Details';
   }
+
+  return segments[1]?.charAt(0).toUpperCase() + segments[1]?.slice(1) || 'Home';
+}
 
   @HostListener('window:scroll', [])
   onWindowScroll() {

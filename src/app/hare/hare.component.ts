@@ -55,7 +55,6 @@ export class HareComponent implements AfterViewInit {
     const textSection = this.textSection.nativeElement.getBoundingClientRect();
     const textStopTop = this.stopTriggerElement?.getBoundingClientRect().top ?? Infinity;
     const textStartTop=textSection.top
-    console.log(textStartTop, textStopTop);
    
 let scrollBuffer = 650;
 

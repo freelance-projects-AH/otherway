@@ -1,0 +1,33 @@
+<section class="py-16 px-4">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+      <ng-container *ngFor="let item of faqs; trackBy: trackByFn">
+        <div class="border border-gray-300 rounded transition-all duration-300">
+          <button
+            class="flex items-center w-full px-4 py-2 text-left"
+            (click)="toggle(item)"
+          >
+            <span
+              class="text-xl font-bold pr-5 transition-transform duration-200"
+            >
+              {{ item.open ? '-' : '+' }}
+            </span>
+            <span class="font-lg font-semibold">
+              {{ item.question }}
+            </span>
+          </button>
+
+          <div
+            class="px-6 text-fontSecondary overflow-hidden transition-all duration-700 ease-in-out"
+            [class.max-h-0]="!item.open"
+            [class.max-h-40]="item.open"
+          >
+            <div class="pb-4">
+              {{ item.answer }}
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>

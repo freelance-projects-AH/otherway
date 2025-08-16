@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { ProjectCardComponent } from '../project-card/project-card.component';
 import { Router, RouterModule } from '@angular/router';
 import { ApiResponse, Project } from '../work/work.component';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { NavbarVisibilityService } from '../navbar-visibility.service';
 
 @Component({
   selector: 'app-selected-work',
@@ -14,8 +15,25 @@ import { CommonModule } from '@angular/common';
 export class SelectedWorkComponent {
   projects: Project[] = [];
   loading = false;
-    constructor(private http: HttpClient,  private router: Router) {}
+  @ViewChild('triggerSection') triggerSection!: ElementRef;
 
+    constructor(private http: HttpClient,  private router: Router,private navbarVisibilityService: NavbarVisibilityService) {}
+@HostListener('window:scroll', [])
+  onWindowScroll(): void {
+    const triggerElement = this.triggerSection.nativeElement;
+  const triggerRect = triggerElement.getBoundingClientRect();
+  const triggerTop = triggerRect.top;
+  const triggerBottom = triggerRect.bottom;
+  
+  // Show navbar when section is above viewport or below viewport
+  if (triggerTop > window.innerHeight || triggerBottom-150 > 0) {
+    this.navbarVisibilityService.setVisibility(true);
+  } else {
+    this.navbarVisibilityService.setVisibility(false);
+  }
+    
+  
+  }
 ngOnInit() {
     this.loadProjects();
   }

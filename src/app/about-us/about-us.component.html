@@ -1,65 +1,38 @@
 <app-hero-two></app-hero-two>
-<div class=" test relative">
-
-
-  <div class="container">
-    <div class="section bg-white dark:bg-dark-background">
-      <div class="image-wrapper">
-        <img
-          src="/about/section1.png"
-          alt="Milestones and Achievements"
-        />
-      </div>
-      <div class="text-container">
-        <div class="icon-box">
-          <i class="fas fa-hand-pointer icon"></i>
-        </div>
-        <h2 class="section-title text-fontPrimary">Our Vision</h2>
-        <p class="section-content text-fontSecondary pb-6">
-          Our vision is to redefine real estate by offering clients the highest standards of service, ensuring that every property experience is seamless, informed, and tailored to their needs. We aim to set a new benchmark in Dubai’s real estate market by bringing transparency, professionalism, and integrity to every transaction.
-        </p>
-      </div>
+<div class="max-w-7xl mx-auto space-y-4 p-4 ">
+  <div
+    *ngFor="let card of cards"
+    class="group relative overflow-hidden rounded-xl cursor-pointer"
+  >
+    <!-- الخلفية -->
+    <div
+      class="absolute inset-0 bg-gray-100 transition-all duration-500 ease-out group-hover:bg-pink-500"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-pink-500 to-pink-500 translate-y-[-100%] group-hover:translate-y-0 transition-transform duration-500 ease-out"
+      ></div>
     </div>
 
-    <div class="section bg-white dark:bg-dark-background">
-      <div class="text-container">
-        <div class="icon-box">
-          <i class="fas fa-trophy"></i>
-        </div>
-        <h2 class="section-title text-fontPrimary">Our Expertise</h2>
-        <p class="section-content text-fontSecondary pb-6">
-          With years of experience in the Dubai real estate industry, we have developed in-depth market knowledge that allows us to identify trends and opportunities that benefit our clients. From luxurious residential properties in Dubai’s most iconic neighborhoods to high-return investment opportunities and bespoke commercial spaces, our expertise spans across every segment of the market.
-        </p>
-      </div>
-      <div class="image-wrapper" style="margin-left: 15px">
-        <img
-          src="/about/section1.png"
-          alt="Milestones and Achievements"
-        />
-      </div>
-    </div>
+    <!-- المحتوى -->
+    <div class="relative flex flex-col md:flex-row justify-between items-start md:items-end p-8 z-10 h-60 ">
+      <h2
+        class=" text-fontPrimary text-6xl font-serif transition-all duration-500 ease-out group-hover:font-extrabold group-hover:text-white"
+      >
+        {{ card.title }}
+      </h2>
 
-    <div class="section bg-white dark:bg-dark-background">
-      <div class="image-wrapper">
-        <img
-          src="/about/section1.png"
-          alt="Innovation and Growth"
-        />
-      </div>
-      <div class="text-container" style="padding-right: 15px">
-        <div class="icon-box">
-          <i class="fas fa-chart-line"></i>
-        </div>
-        <h2 class="section-title text-fontPrimary">Why Choose H&B Elite Properties?</h2>
-          <ul class="section-content text-fontSecondary pb-6">
-            <li><strong>Local Knowledge</strong> We have a deep understanding of Dubai’s real estate landscape, enabling us to offer strategic advice that maximizes value.</li>
-            <li><strong>Personalized Service</strong> Our approach is centered around understanding your unique goals and ensuring a personalized experience, whether you’re buying, selling, or investing.</li>
-            <li><strong>Client-Centric Focus</strong> We place our clients at the heart of everything we do, providing transparent, reliable, and honest advice.</li>
-          </ul>
+      <div >
+        <div class=" text-fontPrimary font-bold uppercase text-sm group-hover:text-white">{{ card.subtitle }}</div>
+        <a
+          [href]="card.link"
+          class="text-fontSecondary underline group-hover:text-black"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{ card.linkText }}
+        </a>
       </div>
     </div>
   </div>
-  <!-- <div class="py-2">
-    <app-analysis></app-analysis>
-  </div> -->
 </div>
+<app-faq></app-faq>

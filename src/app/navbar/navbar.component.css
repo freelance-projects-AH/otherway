@@ -1,22 +1,17 @@
 .text {
   position: absolute;
   top: 0;
-  right: -150px;
   z-index: 10;
+  
 }
 
 .box {
   position: absolute;
   top: -2px;
-  left: -160px;
   z-index: 50;
 }
 
-svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+
 
 #nav-section {
   mix-blend-mode: difference;

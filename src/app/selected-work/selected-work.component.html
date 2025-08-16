@@ -1,4 +1,4 @@
-<section class="mx-[20px] px-4 py-10">
+<section  class="mx-[20px] px-4 py-10">
   <h2 class="text-6xl font-bold mb-[152px] text-fontPrimary">Selected work</h2>
 
   <div
@@ -15,7 +15,7 @@
 
   <div
     *ngIf="!loading"
-    class="mx-4 grid grid-cols-1 lg:grid-cols-2 gap-5 auto-rows-auto"
+    class="mx-4 grid grid-cols-1 lg:grid-cols-2 gap-5 auto-rows-auto space-y-3"
   >
     <app-project-card
       *ngFor="let project of projects"
@@ -26,6 +26,8 @@
       (click)="onProjectCardClick(project)"
       class="cursor-pointer hover:scale-105 transition-transform duration-200"
     ></app-project-card>
+  </div>
+  <div  #triggerSection>
   </div>
   <div class="flex justify-center mt-20 dark:text-white">
     <p class="text-4xl md:text-7xl font-semibold cursor-pointer">

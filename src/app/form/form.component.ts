@@ -34,7 +34,15 @@ constructor(
     this.currentImageIndex = (this.currentImageIndex + 1) % this.images2.length;
     this.resetAutoAdvance();
   }
+ ngOnInit(): void {
+    this.startAutoAdvance();
+  }
 
+  ngOnDestroy(): void {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
   previousImage() {
     this.currentImageIndex =
       this.currentImageIndex === 0
@@ -46,7 +54,7 @@ constructor(
     this.intervalId = setInterval(() => {
       this.currentImageIndex =
         (this.currentImageIndex + 1) % this.images2.length;
-    }, 5000);
+    }, 2000);
   }
 
   private resetAutoAdvance() {

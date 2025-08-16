@@ -20,28 +20,36 @@
         <h2 class="text-2xl font-bold text-fontPrimary pb-2">Contact</h2>
 
         <div>
-          <h3 class="text-lg font-semibold text-fontPrimary mb-1">Emails</h3>
-          <ul class="space-y-1 pl-4 list-disc text-fontSecondary">
+          <h3 class="text-lg font-semibold text-fontPrimary mb-2">Emails:</h3>
+          <ul class="space-y-2 pl-4 text-fontSecondary mb-2">
             <li>
               <a href="mailto:snap.studi@gmail.com" class="hover:underline"
-                >snap.studi&commat;gmail.com</a
+                ><i class="fa fa-envelope" aria-hidden="true"></i>
+                snap.studi&commat;gmail.com</a
               >
             </li>
             <li>
               <a href="mailto:info@snap-studio.ae" class="hover:underline"
-                >info&commat;snap-studio.ae</a
+                ><i class="fa fa-envelope" aria-hidden="true"></i>
+                info&commat;snap-studio.ae</a
               >
             </li>
           </ul>
         </div>
 
         <div>
-          <h3 class="text-lg font-semibold text-fontPrimary mb-1">
-            Phone Numbers
+          <h3 class="text-lg font-semibold text-fontPrimary mb-2">
+            Phone Numbers:
           </h3>
-          <ul class="space-y-1 pl-4 list-disc text-fontSecondary">
-            <li>+20 12 088 55866</li>
-            <li>+971 55 770 6719</li>
+          <ul class="space-y-2 pl-4 text-fontSecondary">
+            <a
+        [href]="whatsappUrl"
+        target="_blank"
+        rel="noopener noreferrer"><li class="hover:underline"><i class="fa-brands fa-whatsapp"></i> +20 12 088 55866</li></a>
+            <a
+        [href]="whatsappUrl2"
+        target="_blank"
+        rel="noopener noreferrer"><li class="hover:underline"><i class="fa-brands fa-whatsapp"></i> +971 55 770 6719</li></a>
           </ul>
         </div>
       </div>
@@ -49,30 +57,43 @@
       <!-- Right Column -->
       <div>
         <h2 class="text-xl font-bold mr-20 text-fontPrimary pb-2">Follow</h2>
-        <ul class="space-y-1 text-lg text-fontSecondary underline flex gap-3 items-center justify-start">
+        <ul class="space-y-1 text-lg text-fontSecondary gap-3">
           <li>
-            <a href="https://www.behance.net/snap-studio"
+            <a
+              class="flex items-center gap-2"
+              href="https://www.behance.net/snap-studio"
               ><i class="fab fa-behance"></i
-            ></a>
+              ><span class="hover:underline">Behance</span></a
+            >
           </li>
           <li>
-            <a href="https://www.facebook.com/SNAP.Studio.ae">
+            <a
+              class="flex items-center gap-2"
+              href="https://www.facebook.com/SNAP.Studio.ae"
+            >
               <i class="fab fa-facebook"></i
-            ></a>
+              ><span class="hover:underline">Facebook</span></a
+            >
           </li>
           <li>
-            <a href="https://www.instagram.com/snap.studio.official/"
+            <a
+              class="flex items-center gap-2"
+              href="https://www.instagram.com/snap.studio.official/"
               ><i class="fab fa-instagram"></i
-            ></a>
+              ><span class="hover:underline">Instagram</span></a
+            >
           </li>
 
           <li>
-            <a href="https://www.tiktok.com/@snapstudio.ae"
+            <a
+              class="flex items-center gap-2"
+              href="https://www.tiktok.com/@snapstudio.ae"
               ><i class="fab fa-tiktok"></i
-            ></a>
+              ><span class="hover:underline">Tiktok</span></a
+            >
           </li>
           <li>
-            <a href="https://x.com/SNAPStudio_"
+            <a href="https://x.com/SNAPStudio_" class="flex items-center gap-2"
               ><svg
                 class="w-5"
                 xmlns="http://www.w3.org/2000/svg"
@@ -80,17 +101,19 @@
               >
                 <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                 <path
-                fill="#7A7A7A"
+                  fill="#7A7A7A"
                   d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z"
-                /></svg
-            ></a>
+                />
+              </svg>
+              <span class="hover:underline">X</span></a
+            >
           </li>
         </ul>
       </div>
     </div>
 
     <!-- Bottom Logo -->
-    <div class="mt-10 flex justify-center">
+    <div class="mt-10 flex">
       <div id="nav-section" class="w-56 md:w-96">
         <svg
           id="Rectangle_2_1_"

@@ -1,11 +1,10 @@
-<section  class="mx-[20px] px-4 py-10">
+<section class="mx-[20px] px-4 py-10">
   <h2 class="text-6xl font-bold mb-[50px] text-fontPrimary">Selected work</h2>
 
   <div
     *ngIf="loading"
     class="mx-4 grid grid-cols-1 lg:grid-cols-2 gap-5 auto-rows-auto"
   >
-
     <ng-container *ngFor="let project of [1, 2, 3, 4, 5, 6]; let i = index">
       <div
         class="relative overflow-hidden rounded-lg bg-gray-300 aspect-video animate-pulse"
@@ -13,30 +12,323 @@
     </ng-container>
   </div>
 
-  <div
-    *ngIf="!loading"
-    class="mx-4 grid grid-cols-1 lg:grid-cols-2 gap-8  "
-  >
-    <app-project-card
-      *ngFor="let project of projects"
-      [mediaType]="getPrimaryMedia(project)?.mediaType || 'image'"
-      [src]="getPrimaryMedia(project)?.src || ''"
-      [title]="project.title"
-      [description]="project.description"
-      (click)="onProjectCardClick(project)"
-      class="cursor-pointer hover:scale-105 transition-transform duration-200"
-    ></app-project-card>
-  </div>
-  <div  #triggerSection>
-  </div>
-  <div class="flex justify-center mt-20 dark:text-white">
-    <p class="text-4xl md:text-7xl font-semibold cursor-pointer">
-      <a routerLink="/work" class="group relative inline-block overflow-hidden">
-        <span><i class="fa-solid fa-arrow-right"></i></span> See all work
-        <span
-          class="absolute bottom-0 left-0 w-full h-[2px] bg-black dark:bg-white scale-x-0 origin-right transition-transform duration-300 group-hover:scale-x-100 group-hover:origin-left"
-        ></span>
-      </a>
-    </p>
+  <div *ngIf="!loading" class="min-h-screen">
+    <div class="mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+        <div class="flex flex-col gap-4">
+          <div
+            class="bg-gradient-to-br from-amber-900 via-orange-950 to-black rounded-3xl p-6 md:p-8 flex flex-col justify-between min-h-[675px] relative overflow-hidden group cursor-pointer hover:scale-105 transition-transform duration-100"
+            (click)="onProjectCardClick(projects[0])"
+          >
+            <ng-container *ngIf="projects?.[0]?.media?.[0] as media">
+              <div
+                *ngIf="media.file_type?.includes('image')"
+                class="absolute inset-0 w-full h-full bg-cover bg-center opacity-50"
+                [style.background-image]="'url(' + media.file_link + ')'"
+              ></div>
+
+              <video
+                *ngIf="media.file_type?.includes('video')"
+                [src]="media.file_link"
+                autoplay
+                muted
+                loop
+                playsinline
+                class="absolute inset-0 w-full h-full object-cover opacity-50"
+              ></video>
+            </ng-container>
+
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-[1]"
+            ></div>
+
+            <div class="relative z-10">
+              <h2 class="text-3xl md:text-4xl font-bold mb-3 text-white">
+                {{ projects[0].title }}
+              </h2>
+              <p class="text-sm text-white/80 max-w-xs">
+                {{ projects[0].description }}
+              </p>
+            </div>
+
+            <div class="relative z-10 flex items-center justify-between">
+              <div class="flex gap-2">
+                <span
+                  *ngFor="let category of projects[0].categories"
+                  class="px-3 py-1.5 rounded-full text-xs font-medium bg-white/20 text-white backdrop-blur-sm"
+                >
+                  {{ category }}
+                </span>
+              </div>
+
+              <div
+                class="w-10 h-10 rounded-full flex items-center justify-center bg-white/20 backdrop-blur-sm group-hover:scale-110 transition-transform"
+              >
+                <svg
+                  class="w-5 h-5 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M7 17L17 7M17 7H7M17 7V17"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="bg-gradient-to-br from-blue-900 via-slate-900 to-blue-950 rounded-3xl p-6 md:p-8 flex flex-col justify-between min-h-[675px] relative overflow-hidden group cursor-pointer hover:scale-105 transition-transform duration-100"
+            (click)="onProjectCardClick(projects[2])"
+          >
+            <ng-container *ngIf="projects?.[2]?.media?.[0] as media">
+              <div
+                *ngIf="media.file_type?.includes('image')"
+                class="absolute inset-0 w-full h-full bg-cover bg-center opacity-50"
+                [style.background-image]="'url(' + media.file_link + ')'"
+              ></div>
+
+              <video
+                *ngIf="media.file_type?.includes('video')"
+                [src]="media.file_link"
+                autoplay
+                muted
+                loop
+                playsinline
+                class="absolute inset-0 w-full h-full object-cover opacity-50"
+              ></video>
+            </ng-container>
+            <div class="relative z-10">
+              <h2 class="text-2xl md:text-3xl font-bold mb-3 text-white">
+                {{ projects[2].title }}
+              </h2>
+              <p class="text-sm text-white/80 max-w-xs">
+                {{ projects[2].description }}
+              </p>
+            </div>
+
+            <div class="relative z-10 flex items-center justify-between">
+              <div class="flex gap-2">
+                <span
+                  *ngFor="let category of projects[2].categories"
+                  class="px-3 py-1.5 rounded-full text-xs font-medium bg-white/20 text-white"
+                >
+                  {{ category }}
+                </span>
+              </div>
+
+              <div
+                class="w-10 h-10 rounded-full flex items-center justify-center bg-white/20 group-hover:scale-110 transition-transform"
+              >
+                <svg
+                  class="w-5 h-5 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M7 17L17 7M17 7H7M17 7V17"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-4">
+          <div
+            class="bg-gradient-to-br from-gray-900 via-black to-gray-950 rounded-3xl p-6 md:p-8 flex flex-col justify-between min-h-[450px] relative overflow-hidden group cursor-pointer hover:scale-105 transition-transform duration-100"
+            (click)="onProjectCardClick(projects[1])"
+          >
+            <ng-container *ngIf="projects?.[1]?.media?.[0] as media">
+              <div
+                *ngIf="media.file_type?.includes('image')"
+                class="absolute inset-0 w-full h-full bg-cover bg-center opacity-50"
+                [style.background-image]="'url(' + media.file_link + ')'"
+              ></div>
+
+              <video
+                *ngIf="media.file_type?.includes('video')"
+                [src]="media.file_link"
+                autoplay
+                muted
+                loop
+                playsinline
+                class="absolute inset-0 w-full h-full object-cover opacity-50"
+              ></video>
+            </ng-container>
+
+            <div class="relative z-10">
+              <h2 class="text-2xl md:text-3xl font-bold mb-3 text-white">
+                {{ projects[1].title }}
+              </h2>
+              <p class="text-sm text-white/80 max-w-xs">
+                {{ projects[1].description }}
+              </p>
+            </div>
+            <div class="relative z-10 flex items-center justify-between">
+              <div class="flex gap-2">
+                <span
+                  *ngFor="let category of projects[2].categories"
+                  class="px-3 py-1.5 rounded-full text-xs font-medium bg-white/20 text-white"
+                >
+                  {{ category }}
+                </span>
+              </div>
+
+              <div
+                class="w-10 h-10 rounded-full flex items-center justify-center bg-white/20 group-hover:scale-110 transition-transform"
+              >
+                <svg
+                  class="w-5 h-5 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M7 17L17 7M17 7H7M17 7V17"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="bg-gradient-to-br from-gray-900 via-black to-gray-950 rounded-3xl p-6 md:p-8 flex flex-col justify-between min-h-[450px] relative overflow-hidden group cursor-pointer hover:scale-105 transition-transform duration-100"
+            (click)="onProjectCardClick(projects[2])"
+          >
+            <ng-container
+              *ngIf="projects?.[2]?.media?.[0] as media"
+              class="haver:scale-110 transition-transform"
+            >
+              <div
+                *ngIf="media.file_type?.includes('image')"
+                class="absolute inset-0 w-full h-full bg-cover bg-center opacity-50"
+                [style.background-image]="'url(' + media.file_link + ')'"
+              ></div>
+
+              <video
+                *ngIf="media.file_type?.includes('video')"
+                [src]="media.file_link"
+                autoplay
+                muted
+                loop
+                playsinline
+                class="absolute inset-0 w-full h-full object-cover opacity-50"
+              ></video>
+            </ng-container>
+
+            <div class="relative z-10">
+              <h2 class="text-2xl md:text-3xl font-bold mb-3 text-white">
+                {{ projects[2].title }}
+              </h2>
+              <p class="text-sm text-white/80 max-w-xs">
+                {{ projects[2].description }}
+              </p>
+            </div>
+            <div class="relative z-10 flex items-center justify-between">
+              <div class="flex gap-2">
+                <span
+                  *ngFor="let category of projects[2].categories"
+                  class="px-3 py-1.5 rounded-full text-xs font-medium bg-white/20 text-white"
+                >
+                  {{ category }}
+                </span>
+              </div>
+
+              <div
+                class="w-10 h-10 rounded-full flex items-center justify-center bg-white/20 group-hover:scale-110 transition-transform"
+              >
+                <svg
+                  class="w-5 h-5 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M7 17L17 7M17 7H7M17 7V17"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            class="p-8 md:py-12 md:px-10 flex flex-col md:flex-row items-center justify-between"
+          >
+            <div class="mb-8 md:mb-0">
+              <h1
+                class="text-4xl md:text-3xl lg:text-5xl font-bold leading-tight tracking-tight"
+              >
+                WHERE BRANDS BECOME VISUALS.
+              </h1>
+              <p class="text-gray-600 text-sm mt-6">See what we've built...</p>
+            </div>
+
+            <div
+              class="relative t w-[200px] md:w-[350px] lg:w-[450px] md:h-[350px] lg:h-[450px]"
+            >
+              <a routerLink="/work">
+                <svg
+                  class="w-full h-full"
+                  version="1.1"
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 2648.1 1710.2"
+                  style="enable-background: new 0 0 2648.1 1710.2"
+                  xml:space="preserve"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #010202;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      class="st0"
+                      d="M1515.2,883.2C977.7,769.1,517.2,432.3,145,39C103.4-17,34.6-15.7,21.9,62.4
+       C6.7,193.7,107.3,303.1,171.3,408.6c246.4,370.9,673.1,611.2,1055.4,771.8c-108.7,27.6-220.3,57.4-321.1,107.5
+       c-60.7,30.2-116.5,69.4-165.1,116.5c-2.4,2.3-4.8,4.7-7.1,7c-47.8,48.5-52,125.5-9.3,178.5c18.3,22.7,41.6,42.2,67,58.7
+       c48.9,31.6,104.7,50.7,162.5,57.4c209.9,24.2,420.6-61.5,616.4-129.2c290.3-102.6,580.6-206.2,864.2-326.3
+       c94.7-31.5,290.8-140.3,181.9-253.3c-47.5-40.3-113-43.8-168.2-69C2241.2,853.4,2045,750.4,1862,628.8
+       c-167.3-112.3-314.3-267.3-512.1-325.1c-68.4-20.5-159.7,10.4-165.1,88.8C1172.3,573.3,1402.9,752.8,1515.2,883.2z"
+                    />
+                    <path
+                      class="st0"
+                      d="M1.1,303.1c-2.6,8.9,0,18.8,2.4,28.2c2,7.7,4.2,15.4,6.7,22.9c98.5,296.6,454.5,701.9,762.5,762.5
+       c33.2,2.7,20.9-42-1.3-49.2C661.1,1019.7,568,941.7,476.1,865.8C360,764.5,240.4,662.4,154.1,533.3
+       C111.9,466.7,66.9,401,32.1,330.1c-4.4-8.9-7.3-18.2-12-28.5C16.1,293.1,3.7,294.1,1.1,303.1z"
+                    />
+                    <path
+                      class="st0"
+                      d="M1763.7,343c-0.6,2.9-0.2,6,0.8,8.8c96,252.8,456.1,476.8,726.1,432.4c27.7-5.3,19.3-41.7-4.5-43.1
+       c-7.1-0.4-14.2-0.8-21.3-1.7c-108.2-14-231.9-57-343.3-113.6c-105.1-53.5-200-125.1-280.8-211.1c-0.3-0.3-0.5-0.6-0.8-0.9
+       c-21.3-22.7-40.7-47-58.7-72.4C1774.1,331.5,1765.5,334.1,1763.7,343z"
+                    />
+                  </g>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

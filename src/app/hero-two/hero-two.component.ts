@@ -1,33 +1,42 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, HostListener, Output, Renderer2, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  EventEmitter,
+  HostListener,
+  Output,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
 import { NavbarVisibilityService } from '../navbar-visibility.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-hero-two',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './hero-two.component.html',
-  styleUrl: './hero-two.component.css'
+  styleUrl: './hero-two.component.css',
 })
-export class HeroTwoComponent implements AfterViewInit{
-@ViewChild('videoContainer') videoContainer!: ElementRef;
+export class HeroTwoComponent implements AfterViewInit {
+  @ViewChild('videoContainer') videoContainer!: ElementRef;
   @ViewChild('textContainer') textContainer!: ElementRef;
   @ViewChild('textSection') textSection!: ElementRef;
   @ViewChild('textStopTrigger') textStopTrigger!: ElementRef;
-@ViewChild('triggerSection') triggerSection!: ElementRef;
+  @ViewChild('triggerSection') triggerSection!: ElementRef;
   @Output() sectionInView = new EventEmitter<boolean>();
 
-  
   stopTriggerElement!: HTMLElement | null;
 
-  constructor(private renderer: Renderer2,private navbarVisibilityService: NavbarVisibilityService) {}
+  constructor(
+    private renderer: Renderer2,
+    private navbarVisibilityService: NavbarVisibilityService
+  ) {}
 
   ngAfterViewInit(): void {
     setTimeout(() => {
       this.stopTriggerElement = document.getElementById('text-stop-trigger');
       this.onWindowScroll();
-     
-  
     }, 0);
-    
   }
 
   @HostListener('window:scroll', [])
@@ -35,7 +44,8 @@ export class HeroTwoComponent implements AfterViewInit{
     const video = this.videoContainer.nativeElement;
     const text = this.textContainer.nativeElement;
 
-    const videoTriggerTop = this.textSection.nativeElement.getBoundingClientRect().top;
+    const videoTriggerTop =
+      this.textSection.nativeElement.getBoundingClientRect().top;
     if (videoTriggerTop <= 0) {
       this.renderer.removeClass(video, 'fixed');
       this.renderer.addClass(video, 'absolute');
@@ -45,60 +55,59 @@ export class HeroTwoComponent implements AfterViewInit{
     }
 
     const textSection = this.textSection.nativeElement.getBoundingClientRect();
-    const textStopTop = this.stopTriggerElement?.getBoundingClientRect().top ?? Infinity;
-    const textStartTop=textSection.top
-   
-let scrollBuffer = 650;
+    const textStopTop =
+      this.stopTriggerElement?.getBoundingClientRect().top ?? Infinity;
+    const textStartTop = textSection.top;
 
-if (window.innerWidth < 768) {
-  // موبايل
-  scrollBuffer = 450;
-} else if (window.innerWidth >= 640 && window.innerWidth < 1024) {
-  // تابلت
-  scrollBuffer = 750;
-} else {
-  // ديسكتوب
-  scrollBuffer = 650;
-}
+    let scrollBuffer = 650;
 
-if (textStartTop <= 0 && textStopTop > scrollBuffer) {
-  this.renderer.setStyle(text, 'position', 'fixed');
-  this.renderer.setStyle(text, 'top', '0');
-  this.renderer.setStyle(text, 'left', '0');
-  this.renderer.setStyle(text, 'width', '100%');
-  this.renderer.setStyle(text, 'height', '100%');
-  this.renderer.setStyle(text, 'color', '#AF8255'); // بني
-    this.renderer.setStyle(text, 'display', 'flex'); // إخفاء النص
+    if (window.innerWidth < 768) {
+      // موبايل
+      scrollBuffer = 450;
+    } else if (window.innerWidth >= 640 && window.innerWidth < 1024) {
+      // تابلت
+      scrollBuffer = 750;
+    } else {
+      // ديسكتوب
+      scrollBuffer = 650;
+    }
 
-}
+    if (textStartTop <= 0 && textStopTop > scrollBuffer) {
+      this.renderer.setStyle(text, 'position', 'fixed');
+      this.renderer.setStyle(text, 'top', '0');
+      this.renderer.setStyle(text, 'left', '0');
+      this.renderer.setStyle(text, 'width', '100%');
+      this.renderer.setStyle(text, 'height', '100%');
+      this.renderer.setStyle(text, 'color', '#AF8255'); // بني
+      this.renderer.setStyle(text, 'display', 'flex'); // إخفاء النص
+    }
 
-// الحالة 2: رجعت لفوق قبل ما تدخل السيكشن
-else if (textStartTop > 0) {
-    this.renderer.setStyle(text, 'display', 'flex'); // إخفاء النص
+    // الحالة 2: رجعت لفوق قبل ما تدخل السيكشن
+    else if (textStartTop > 0) {
+      this.renderer.setStyle(text, 'display', 'flex'); // إخفاء النص
 
-  this.renderer.setStyle(text, 'position', 'absolute');
-  this.renderer.setStyle(text, 'top', '0');
-    this.renderer.setStyle(text, 'color', '#AF8255'); // بني
+      this.renderer.setStyle(text, 'position', 'absolute');
+      this.renderer.setStyle(text, 'top', '0');
+      this.renderer.setStyle(text, 'color', '#AF8255'); // بني
+    }
 
-}
+    // الحالة 3: عدّيت نهاية السيكشن
+    else {
+      this.renderer.setStyle(text, 'color', 'black'); // أو لون مختلف
+      // this.renderer.setStyle(text, 'position', 'absolute');
+      this.renderer.setStyle(text, 'display', 'none'); // إخفاء النص
+    }
 
-// الحالة 3: عدّيت نهاية السيكشن
-else {
-  this.renderer.setStyle(text, 'color', 'black'); // أو لون مختلف
-  // this.renderer.setStyle(text, 'position', 'absolute');
-  this.renderer.setStyle(text, 'display', 'none'); // إخفاء النص
-}
-    
-const triggerElement = this.triggerSection.nativeElement;
-  const triggerRect = triggerElement.getBoundingClientRect();
-  const triggerTop = triggerRect.top;
-  const triggerBottom = triggerRect.bottom;
-  
-  // Show navbar when section is above viewport or below viewport
-  if (triggerTop > window.innerHeight || triggerBottom-150 > 0) {
-    this.navbarVisibilityService.setVisibility(true);
-  } else {
-    this.navbarVisibilityService.setVisibility(false);
-  }
+    const triggerElement = this.triggerSection.nativeElement;
+    const triggerRect = triggerElement.getBoundingClientRect();
+    const triggerTop = triggerRect.top;
+    const triggerBottom = triggerRect.bottom;
+
+    // Show navbar when section is above viewport or below viewport
+    if (triggerTop > window.innerHeight || triggerBottom - 150 > 0) {
+      this.navbarVisibilityService.setVisibility(true);
+    } else {
+      this.navbarVisibilityService.setVisibility(false);
+    }
   }
 }

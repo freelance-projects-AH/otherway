@@ -1,35 +1,44 @@
 <app-hero-two></app-hero-two>
 <app-icons></app-icons>
-<section  class="mx-[20px] px-4 py-10 mt-4">
-  <h2 class="text-6xl font-bold mb-4 text-primary">Selected work</h2>
-  <p class="text-6xl font-exo mb-16">Experts in creating and
-transforming brands.</p>
- <div class="flex flex-wrap gap-2 mb-12 justify-start">
-    <button
-      *ngFor="let tab of tabs"
-      (click)="onTabClick(tab._id)"
-    [ngClass]="{
-    'bg-black text-white': activeTab === tab._id,
-    'bg-transparent text-gray-700 hover:bg-gray-100': activeTab !== tab._id
-  }"
-      class="px-6 py-3 rounded-full text-sm font-medium transition-all duration-200 border border-gray-200 min-w-[80px]"
-    >
-      {{ tab.label }}
-    </button>
+<section class="px-4 py-10 bg-forth">
+  <div class="flex items-center flex-col justify-center">
+    <img src="/work/Projects.png" alt="Text" class="h-[100px] md:h-[150px]" />
+    <div class="flex flex-wrap gap-2 mb-12 justify-start">
+      <button
+        *ngFor="let tab of tabs"
+        (click)="onTabClick(tab._id)"
+        [ngClass]="{
+          'bg-black text-primary': activeTab === tab._id,
+          'bg-transparent text-gray-700 hover:bg-gray-100':
+            activeTab !== tab._id
+        }"
+        class="px-3 py-1 rounded-lg text-sm font-medium transition-all duration-200 min-w-[80px]"
+      >
+        {{ tab.label }}
+      </button>
+    </div>
   </div>
-   <div *ngIf="loading" class="flex justify-center flex-col gap-5 items-center py-20">
-      <img src="/nav/Logo Black.svg" alt="Text" class="block h-[60px] " />
-    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+  <div
+    *ngIf="loading"
+    class="flex justify-center flex-col gap-5 items-center py-20"
+  >
+    <img src="/nav/Logo Black.svg" alt="Text" class="block h-[60px]" />
+    <div
+      class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"
+    ></div>
   </div>
 
-
-  <div *ngIf="!loading" class="mx-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-auto">
+  <div
+    *ngIf="!loading"
+    class="mx-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-auto"
+  >
     <app-project-card
-     *ngFor="let project of projects"
+      *ngFor="let project of projects"
       [mediaType]="getPrimaryMedia(project)?.mediaType || 'image'"
       [src]="getPrimaryMedia(project)?.src || ''"
       [title]="project.title"
       [description]="project.description"
+      [categories]="project.categories"
       (click)="onProjectCardClick(project)"
       class="cursor-pointer hover:scale-105 transition-transform duration-200"
     ></app-project-card>

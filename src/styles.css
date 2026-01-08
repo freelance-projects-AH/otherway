@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'ngx-toastr/toastr.css';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "ngx-toastr/toastr.css";
+@import "tailwindcss/utilities";
 
 /* Base styles for smooth transitions */
 /* #toast-container {
@@ -19,19 +19,20 @@
 } */
 
 * {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 /* Light mode (default) */
 body {
-  background-image: linear-gradient(#fff,#fff 49%,#f5bac5);
+  background-color: white;
   color: #000000;
   font-family: "Poppins", sans-serif;
 }
 
 /* Dark mode */
 .dark body {
-    background-image: none;
+  background-image: none;
 
   @apply bg-dark-background text-dark-fontSecondary;
 }
@@ -40,9 +41,8 @@ body {
 /* Firefox - Modern thin scrollbar */
 html {
   scrollbar-width: auto;
-  scrollbar-color: #AF8255 transparent;
-   background: #000000;
-
+  scrollbar-color: #af8255 transparent;
+  background: #000000;
 }
 
 /* Webkit browsers (Chrome, Safari, Edge) - Main page scrollbar */
@@ -52,34 +52,36 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: linear-gradient(90deg, transparent, rgba(241, 245, 249, 0.3), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(241, 245, 249, 0.3),
+    transparent
+  );
   border-radius: 10px;
   margin: 4px 0;
 }
 
 body::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #AF8255 0%, #C4956A 50%, #AF8255 100%);
+  background: linear-gradient(135deg, #af8255 0%, #c4956a 50%, #af8255 100%);
   border-radius: 10px;
   border: 3px solid transparent;
   background-clip: padding-box;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3),
     0 2px 8px rgba(175, 130, 85, 0.2);
   transition: all 0.3s ease;
 }
 
 body::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #C4956A 0%, #D4A675 50%, #C4956A 100%);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+  background: linear-gradient(135deg, #c4956a 0%, #d4a675 50%, #c4956a 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4),
     0 4px 12px rgba(175, 130, 85, 0.3);
   transform: scale(1.05);
 }
 
 body::-webkit-scrollbar-thumb:active {
-  background: linear-gradient(135deg, #9a6f47 0%, #AF8255 50%, #9a6f47 100%);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+  background: linear-gradient(135deg, #9a6f47 0%, #af8255 50%, #9a6f47 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),
     0 1px 4px rgba(175, 130, 85, 0.4);
 }
 
@@ -97,20 +99,18 @@ body::-webkit-scrollbar-thumb:active {
 }
 
 *::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #AF8255 0%, #C4956A 100%);
+  background: linear-gradient(135deg, #af8255 0%, #c4956a 100%);
   border-radius: 8px;
   border: 2px solid transparent;
   background-clip: padding-box;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),
     0 1px 4px rgba(175, 130, 85, 0.15);
   transition: all 0.2s ease;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #C4956A 0%, #D4A675 100%);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+  background: linear-gradient(135deg, #c4956a 0%, #d4a675 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3),
     0 2px 6px rgba(175, 130, 85, 0.25);
 }
 
@@ -121,12 +121,17 @@ body::-webkit-scrollbar-thumb:active {
 /* Firefox - Enhanced styling */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #AF8255 transparent;
+  scrollbar-color: #af8255 transparent;
 }
 
 /* Dark mode scrollbar styling */
 .dark body::-webkit-scrollbar-track {
-  background: linear-gradient(90deg, transparent, rgba(30, 41, 59, 0.3), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(30, 41, 59, 0.3),
+    transparent
+  );
 }
 
 .dark *::-webkit-scrollbar-track {
@@ -134,5 +139,5 @@ body::-webkit-scrollbar-thumb:active {
 }
 
 .dark html {
-  scrollbar-color: #AF8255 transparent;
+  scrollbar-color: #af8255 transparent;
 }

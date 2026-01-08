@@ -1,14 +1,77 @@
+.reviews-header {
+  display: flex;
+  /* justify-content: space-between; */
+  gap:15rem;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.header-title {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  line-height: 1.1;
+  padding-left: 4rem;
+    font-style: italic;
+}
+
+.what {
+  font-size: 70px;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -1px;
+  padding-left: 4rem;
+}
+
+.they-say {
+  font-size: 74px;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -1px;
+}
+
+.stats-container {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 48px;
+  font-weight: 700;
+  /* color: #FDB022; */
+  margin: 0 0 8px 0;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 24px;
+  /* color: #FDB022; */
+  margin: 0;
+  font-weight: 500;
+}
 .slider-container {
-  overflow: hidden;
+   overflow: hidden;
   position: relative;
+  height: calc((250px * 2) + 20px);
+    width: 33.33%;
 }
 
 .slider-wrapper {
   display: flex;
-  transition: transform 0.5s ease;
+    flex-direction: column;
+transition: transform 1.8s ease-in-out;
   gap: 20px;
-  padding-right: 10px; 
+  padding-right: 10px;
+    /* padding-bottom: 10px; */
+
 }
+
 
 .news-card {
   width: 90%;
@@ -18,7 +81,7 @@
   display: flex;
   flex-direction: column;
   flex: 1 0 auto;
-  background-color: white;
+  background-color: #121212;
   border: 1px solid rgba(255, 255, 255, 0.2);
 
 }
@@ -26,14 +89,24 @@
 
 .card-header {
   margin-bottom: 15px;
+  display: flex;
+  margin-left: auto;
+  gap: 11rem;
+  .card-stars {
+  display: flex;
+  gap: 4px;
+  color:#f7d000
+}
 }
 
 .category {
   padding: 6px 12px;
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 10px;
+  font-weight: 700;
   color: #000;
-  background-color: #f0f0f0;
+  background-color: #000000;
+  color: #fff;
+  border-radius: 8px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -59,7 +132,7 @@
   margin-top: 15px;
   display: flex;
   justify-content: center;
-  
+
 }
 
 .card-image img {
@@ -69,13 +142,95 @@
 }
 
 /* شاشة أكبر من 768px */
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .news-card {
-    max-width: calc((100% - 40px) / 3.2); /* نسيب فراغ بسيط للكارت الجاي */
+    max-width: calc((100% - 40px) / 3.2);
   }
-}
+} */
 
 @media (max-width: 768px) {
+  .reviews-header {
+  display: flex;
+  /* justify-content: space-between; */
+  gap:4rem;
+  align-items: center;
+  margin-bottom: 20px;
+  /* padding: 0 20px; */
+}
+
+.header-title {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  line-height: 1.1;
+  /* padding-left: 4rem; */
+    font-style: italic;
+     padding: 0px;
+}
+
+.what {
+  font-size: 30px;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -1px;
+  padding-left: 1rem;
+}
+
+.they-say {
+  font-size: 20px;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -1px;
+}
+
+.stats-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 20px;
+  font-weight: 700;
+  /* color: #FDB022; */
+  /* margin: 0 0 8px 0; */
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 16px;
+  /* color: #FDB022; */
+  margin: 0;
+  font-weight: 500;
+}
+  .card-header {
+  margin-bottom: 15px;
+  display: flex;
+  margin-left: auto;
+  gap: 7rem;
+  .card-stars {
+  display: flex;
+  gap: 4px;
+  color:#f7d000
+}
+  }
+  .slider-wrapper {
+      display: flex;
+    flex-direction: column;
+transition: transform 2.2s ease-in-out;
+  gap: 20px;
+  padding-right: 10px;
+  }
+  .slider-container {
+       overflow: hidden;
+  position: relative;
+  height: calc((250px * 2) + 20px);
+    width: 100%;
+  }
   .news-card {
     max-width: 90%;
   }

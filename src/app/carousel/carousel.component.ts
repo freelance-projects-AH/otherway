@@ -1,4 +1,4 @@
-import { NgFor } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
 import {
   Component,
   HostListener,
@@ -9,11 +9,14 @@ import {
 @Component({
   selector: 'app-carousel',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor,CommonModule],
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.css',
 })
 export class CarouselComponent implements OnInit, OnDestroy {
+    showFirstSlider: boolean = false;
+  showSecondSlider: boolean = false;
+  showThiredSlider: boolean = false;
   newsItems: any[] = [
     {
       id: 1,
@@ -27,7 +30,8 @@ export class CarouselComponent implements OnInit, OnDestroy {
       title: "Campaign reports on Otherway launching New York Office",
       description: "Otherway opens New York office to 'blow the cobwebs off' US creative brands.",
       image: "/slider/2.jpg",
-      category: "Press"
+      category: "Press",
+       rating : "4"
     },
     {
       id: 3,
@@ -56,28 +60,84 @@ export class CarouselComponent implements OnInit, OnDestroy {
       description: "Companies worldwide are adopting eco-friendly design principles to reduce environmental impact.",
       image: "/slider/6.jpg",
       category: "Design"
-    }
+    },
+        {
+      id: 7,
+      title: "Tech Innovation Drives Digital Transformation",
+      description: "Exploring how emerging technologies are reshaping business landscapes across industries.",
+      image: "/slider/5.jpg",
+      category: "DESIGN"
+    },
+        {
+      id: 8,
+      title: "Tech Innovation Drives Digital Transformation",
+      description: "Exploring how emerging technologies are reshaping business landscapes across industries.",
+      image: "/slider/5.jpg",
+      category: "DESIGN"
+    },
+        {
+      id: 9,
+      title: "Tech Innovation Drives Digital Transformation",
+      description: "Exploring how emerging technologies are reshaping business landscapes across industries.",
+      image: "/slider/5.jpg",
+      category: "Tech",
+      rating : "4"
+    },
+        {
+      id: 10,
+      title: "Tech Innovation Drives Digital Transformation",
+      description: "Exploring how emerging technologies are reshaping business landscapes across industries.",
+      image: "/slider/5.jpg",
+      category: "DESIGN"
+    },
+        {
+      id:11,
+      title: "Tech Innovation Drives Digital Transformation",
+      description: "Exploring how emerging technologies are reshaping business landscapes across industries.",
+      image: "/slider/5.jpg",
+      category: "Tech"
+    },
   ];
 
   displayItems: any[] = [];
   currentIndex = 0;
   slideWidth = 370;
   translateX = 0;
+  reverseTranslateX = 0;
   isTransitioning = true;
   private autoSlideInterval: any;
+  @HostListener('window:resize')
 
   ngOnInit() {
+    this.onResize();
     this.setupInfiniteLoop();
     this.setSlideWidth();
     this.startAutoSlide();
   }
-
   ngOnDestroy() {
     this.stopAutoSlide();
   }
 
-  @HostListener('window:resize')
   onResize() {
+      const width = window.innerWidth;
+console.log("width",width);
+  if (width >= 1024) {
+    this.showFirstSlider = true;
+    this.showSecondSlider = true;
+    this.showThiredSlider = true;
+
+  }else if (width >= 768) {
+    this.showFirstSlider = true;
+    this.showSecondSlider = true;
+    this.showThiredSlider = false;
+  }
+  else {
+    this.showFirstSlider = true;
+    this.showSecondSlider = false;
+    this.showThiredSlider = false;
+  }
+
+  this.setSlideWidth();
     this.setSlideWidth();
   }
 
@@ -99,6 +159,8 @@ export class CarouselComponent implements OnInit, OnDestroy {
     ];
     this.currentIndex = 3;
     this.translateX = -this.currentIndex * this.slideWidth;
+     this.reverseTranslateX =
+    -(this.newsItems.length + 3) * this.slideWidth;
   }
 
   private startAutoSlide() {
@@ -118,12 +180,17 @@ export class CarouselComponent implements OnInit, OnDestroy {
     this.isTransitioning = true;
     this.currentIndex++;
     this.translateX = -this.currentIndex * this.slideWidth;
+    this.reverseTranslateX = -(this.newsItems.length + 6 - this.currentIndex) * this.slideWidth;
 
     if (this.currentIndex >= this.newsItems.length + 3) {
       setTimeout(() => {
         this.isTransitioning = false;
         this.currentIndex = 3;
         this.translateX = -this.currentIndex * this.slideWidth;
+         this.reverseTranslateX =
+      -(this.newsItems.length + 3) * this.slideWidth;
+     void (document.querySelector('.slider-wrapper') as HTMLElement).offsetWidth;
+        this.isTransitioning = true;
       }, 500);
     }
   }

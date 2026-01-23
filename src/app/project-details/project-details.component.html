@@ -15,7 +15,7 @@
   <div *ngIf="error && !loading" class="flex justify-center items-center py-20">
     <div class="text-center">
       <h2 class="text-2xl font-bold text-primary mb-4">Project Not Found</h2>
-      <p class="text-gray-600 mb-6 text-6xl font-exo">
+      <p class="text-gray-600 mb-6 text-6xl">
         The project you're looking for doesn't exist or has been removed.
       </p>
       <button
@@ -55,7 +55,7 @@
     <!-- Project Title and Description -->
     <div class="mb-12">
       <h1 class="text-5xl font-bold text-black mb-6">{{ project.title }}</h1>
-      <p class="text-4xl font-exo text-black leading-relaxed mb-8">
+      <p class="text-4xl text-black leading-relaxed mb-8">
         {{ project.description }}
       </p>
     </div>

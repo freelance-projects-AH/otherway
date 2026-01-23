@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    darkMode: 'class',
+  darkMode: "class",
   content: ["./src/**/*.{html,ts}"],
   theme: {
     extend: {
@@ -13,10 +13,10 @@ module.exports = {
         fontSecondary: "#7A7A7A",
         fontThread: "#7A7A7A",
         black: "#000000",
-        secondryBlack:"#111010",
+        secondryBlack: "#111010",
         white: "#FFFFFF",
         error: "#ef6b51",
-          dark: {
+        dark: {
           primary: "#f7d000", // Lighter version of primary for dark mode
           secondary: "#e4e4e4", // Dark gray background
           thread: "#374151", // Darker thread color
@@ -26,12 +26,11 @@ module.exports = {
           background: "#000000", // Very dark background
           surface: "#1F2937", // Card/surface background
           newone: "#e4e4e4", // Additional color
-        }
-     },
-     fontFamily: {
-        exo: ['"Exo"', 'sans-serif'],
+        },
       },
-
+      fontFamily: {
+        exo: ["Poppins", "sans-serif"],
+      },
     },
   },
   plugins: [],

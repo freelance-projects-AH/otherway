@@ -9,16 +9,20 @@
           >
             <span
               class="text-xl font-bold pr-5 transition-transform duration-200"
+              [class.text-primary]="item.open"
             >
               {{ item.open ? "-" : "+" }}
             </span>
-            <span class="font-lg font-semibold">
+            <span
+              class="font-lg font-semibold"
+              [class.text-primary]="item.open"
+            >
               {{ item.question }}
             </span>
           </button>
 
           <div
-            class="px-6 text-fontSecondary overflow-hidden transition-all duration-700 ease-in-out"
+            class="px-6 overflow-hidden transition-all duration-700 ease-in-out"
             [class.max-h-0]="!item.open"
             [class.max-h-40]="item.open"
           >

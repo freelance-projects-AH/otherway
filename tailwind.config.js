@@ -29,7 +29,16 @@ module.exports = {
         },
       },
       fontFamily: {
-        exo: ["Poppins", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+      },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        marquee: "marquee 50s linear infinite",
       },
     },
   },

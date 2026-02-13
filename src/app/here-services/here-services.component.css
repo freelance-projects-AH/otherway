@@ -1,0 +1,90 @@
+/* Custom animations and additional styles */
+
+.hero-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Smooth fade-in animation on load */
+.hero-container > div {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Logo subtle hover animation */
+.illustration-container {
+  transition: transform 0.3s ease;
+}
+
+.illustration-container:hover {
+  transform: scale(1.05);
+}
+
+/* Button ripple effect */
+button {
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.6s,
+    height 0.6s;
+}
+
+button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Responsive font sizing for better mobile experience */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #facc15;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fde047;
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(45deg, #facc15, #fde047);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

@@ -1,0 +1,142 @@
+<div class="w-full bg-black py-16">
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Header -->
+    <div class="flex justify-between flex-col md:flex-row items-center">
+      <div class="text-center relative">
+        <h2 class="text-7xl lg:text-8xl font-bold mb-4 text-fontPrimary italic">
+          What
+        </h2>
+        <h2 class="text-7xl lg:text-8xl font-bold mb-4 text-fontPrimary italic">
+          they say?
+        </h2>
+      </div>
+      <div class="flex gap-4">
+        <div class="">
+          <h3 class="text-5xl lg:text-7xl font-bold text-fontPrimary">500+</h3>
+          <p class="text-fontPrimary">Happy Clients</p>
+        </div>
+        <div class="">
+          <h3 class="text-5xl lg:text-7xl font-bold text-fontPrimary">700+</h3>
+          <p class="text-fontPrimary">Reviews</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Three Column Slider -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+      <!-- Column 1 - Scrolls Down -->
+      <div class="overflow-hidden">
+        <div class="slider-column animate-scroll-down">
+          <div
+            *ngFor="let testimonial of column1Items"
+            class="bg-[#121212] rounded-xl shadow-lg p-6 mb-6 hover:shadow-xl transition-shadow duration-300"
+          >
+            <div class="mb-4">
+              <svg
+                class="w-8 h-8 text-blue-500 mb-3"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+                />
+              </svg>
+              <p class="text-white leading-relaxed">
+                {{ testimonial.text }}
+              </p>
+            </div>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center text-white font-semibold mr-3"
+              >
+                {{ testimonial.name.charAt(0) }}
+              </div>
+              <div>
+                <h4 class="font-semibold text-white">
+                  {{ testimonial.name }}
+                </h4>
+                <p class="text-sm text-gray-100">{{ testimonial.role }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 2 - Scrolls Up -->
+      <div class="overflow-hidden">
+        <div class="slider-column animate-scroll-up">
+          <div
+            *ngFor="let testimonial of column2Items"
+            class="bg-[#121212] rounded-xl shadow-lg p-6 mb-6 hover:shadow-xl transition-shadow duration-300"
+          >
+            <div class="mb-4">
+              <svg
+                class="w-8 h-8 text-purple-500 mb-3"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+                />
+              </svg>
+              <p class="text-white leading-relaxed">
+                {{ testimonial.text }}
+              </p>
+            </div>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-400 to-pink-500 flex items-center justify-center text-white font-semibold mr-3"
+              >
+                {{ testimonial.name.charAt(0) }}
+              </div>
+              <div>
+                <h4 class="font-semibold text-white">
+                  {{ testimonial.name }}
+                </h4>
+                <p class="text-sm text-gray-100">{{ testimonial.role }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 3 - Scrolls Down -->
+      <div class="overflow-hidden">
+        <div class="slider-column animate-scroll-down">
+          <div
+            *ngFor="let testimonial of column3Items"
+            class="bg-[#121212] rounded-xl shadow-lg p-6 mb-6 hover:shadow-xl transition-shadow duration-300"
+          >
+            <div class="mb-4">
+              <svg
+                class="w-8 h-8 text-green-500 mb-3"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+                />
+              </svg>
+              <p class="text-white leading-relaxed">
+                {{ testimonial.text }}
+              </p>
+            </div>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 rounded-full bg-gradient-to-r from-green-400 to-teal-500 flex items-center justify-center text-white font-semibold mr-3"
+              >
+                {{ testimonial.name.charAt(0) }}
+              </div>
+              <div>
+                <h4 class="font-semibold text-white">
+                  {{ testimonial.name }}
+                </h4>
+                <p class="text-sm text-gray-100">{{ testimonial.role }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

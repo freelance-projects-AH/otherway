@@ -1,19 +1,23 @@
 <section class="bg-black pb-6 px-4 sm:px-6 lg:px-8">
   <div class="max-w-7xl mx-auto relative">
     <!-- Header -->
-    <div class="">
-      <h2 class="text-5xl sm:text-6xl lg:text-7xl italic text-primary">
-        Our <span class="block sm:inline">Services</span>
+    <div class="relative md:top-16">
+      <h2 class="mb-12 flex items-start">
+        <span class="text-white text-2xl">Our</span>
+        <span
+          class="text-6xl md:text-8xl lg:text-9xl text-yellow-400 italic font-serif block md:inline"
+          >Services</span
+        >
       </h2>
     </div>
 
     <!-- Services Grid -->
     <div
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 relative top-[-12px] hamada"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 relative top-[-12px] shadow-[0_-20px_30px_rgba(0,0,0,0.6)]"
     >
       <div
         *ngFor="let service of services"
-        class="group bg-zinc-900 rounded-2xl overflow-hidden hover:bg-zinc-800 transition-all duration-300 cursor-pointer"
+        class="group bg-zinc-900 rounded-2xl overflow-hidden hover:bg-zinc-800 transition-all duration-300 cursor-pointer shadow-lg hover:shadow-yellow-400/30"
       >
         <!-- Image Container -->
         <div class="relative h-96 overflow-hidden bg-zinc-800">

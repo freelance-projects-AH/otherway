@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -143,7 +143,7 @@ getRowClass(index: number): string {
       itemsProcessed += 1;
     } else {
       if (itemsProcessed === index) {
-        return 'grid-cols-1 md:grid-cols-2';
+        return 'grid-cols-1 md:grid-cols-1';
       }
       itemsProcessed += 2;
     }
@@ -170,4 +170,19 @@ isTwoColumnRow(index: number): boolean {
 
   return false;
 }
+
+// this is for rating#####
+ @Input() name = 'Ranya K. Abdullah';
+  @Input() rating = 5;
+  @Input() review =
+    "We replaced endless photo sessions with stunning 3D visuals. It's faster, more flexible, and saves us serious time — especially during launches.";
+  @Input() tags: string[] = ['Design', 'Design', 'Design'];
+
+  get stars(): number[] {
+    return Array(this.rating).fill(0);
+  }
+
+
+
+
 }

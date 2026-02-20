@@ -9,71 +9,37 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './form.component.css'
 })
 export class FormComponent {
-    contactForm: FormGroup;
-  currentImageIndex = 0;
-  private intervalId: any;
-submitSuccess = false;
+  contactForm: FormGroup;
+  submitSuccess = false;
   submitError = '';
-    isLoading = false;
+  isLoading = false;
 
-constructor(
-  
-    private fb: FormBuilder,
-    
-  ) {
+constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
-      firstName: ['', [Validators.required, Validators.minLength(2)]],
-      lastName: ['', [Validators.required, Validators.minLength(2)]],
-      phoneNumber: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
+      firstName: ['', [Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
-      country: [''],
-      property: [''],
+      message: ['', []],
     });
   }
-   nextImage() {
-    this.currentImageIndex = (this.currentImageIndex + 1) % this.images2.length;
-    this.resetAutoAdvance();
-  }
- ngOnInit(): void {
-    this.startAutoAdvance();
+
+  ngOnInit(): void {}
+
+  ngOnDestroy(): void {}
+
+  onSubmit() {
+    if (this.contactForm.invalid) return;
+
+    this.isLoading = true;
+    this.submitSuccess = false;
+    this.submitError = '';
+
+    // Simulate API call
+    setTimeout(() => {
+      this.isLoading = false;
+      this.submitSuccess = true;
+      this.contactForm.reset();
+      console.log('Form submitted:', this.contactForm.value);
+    }, 1500);
   }
 
-  ngOnDestroy(): void {
-    if (this.intervalId) {
-      clearInterval(this.intervalId);
-    }
-  }
-  previousImage() {
-    this.currentImageIndex =
-      this.currentImageIndex === 0
-        ? this.images2.length - 1
-        : this.currentImageIndex - 1;
-    this.resetAutoAdvance();
-  }
-  private startAutoAdvance() {
-    this.intervalId = setInterval(() => {
-      this.currentImageIndex =
-        (this.currentImageIndex + 1) % this.images2.length;
-    }, 2000);
-  }
-
-  private resetAutoAdvance() {
-    if (this.intervalId) {
-      clearInterval(this.intervalId);
-    }
-    this.startAutoAdvance();
-  }
-   images2 = [
-    '/slider/1.jpg',
-    '/slider/2.jpg',
-    '/slider/4.jpg',
-    '/slider/5.jpg',
-    '/slider/6.jpg',
-  ];
-  handleFormSubmit(data: any) {
-     console.log('Form submitted:', data);
-  }
-   onSubmit() {
-   
-  }
 }

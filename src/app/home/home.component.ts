@@ -9,6 +9,8 @@ import { OurServiceComponent } from '../our-services/our-service/our-service.com
 import { HereServicesComponent } from '../here-services/here-services.component';
 import { TestimonialSliderComponent } from '../testimonials/testimonials.component';
 import { IconsReverseComponent } from '../icons-reverse/icons.component';
+import { FAQComponent } from "../faq/faq.component";
+import { NewComponentComponent } from "../new-component/new-component.component";
 
 @Component({
   selector: 'app-home',
@@ -24,7 +26,9 @@ import { IconsReverseComponent } from '../icons-reverse/icons.component';
     HereServicesComponent,
     TestimonialSliderComponent,
     IconsReverseComponent,
-  ],
+    FAQComponent,
+    NewComponentComponent
+],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

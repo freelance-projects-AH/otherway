@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { HeroTwoComponent } from '../hero-two/hero-two.component';
 import { IconsComponent } from '../icons/icons.component';
 import { CarouselComponent } from '../carousel/carousel.component';
+import { IconsReverseComponent } from '../icons-reverse/icons.component';
+import { TestimonialSliderComponent } from '../testimonials/testimonials.component';
 
 export interface MediaItem {
   index: number;
@@ -44,6 +46,8 @@ export interface ApiResponse {
     HeroTwoComponent,
     IconsComponent,
     CarouselComponent,
+    IconsReverseComponent,
+    TestimonialSliderComponent,
   ],
   templateUrl: './work.component.html',
   styleUrl: './work.component.css',
@@ -61,7 +65,10 @@ export class WorkComponent implements OnInit {
 
   tabs: { _id: string; label: string }[] = [{ _id: 'all', label: 'All' }];
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+  ) {}
 
   ngOnInit() {
     this.loadProjects();
@@ -142,7 +149,7 @@ export class WorkComponent implements OnInit {
   }
 
   getPrimaryMedia(
-    project: Project
+    project: Project,
   ): { src: string; mediaType: 'video' | 'image' } | null {
     if (!project.media || project.media.length === 0) {
       return null;

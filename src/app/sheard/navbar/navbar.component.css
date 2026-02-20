@@ -2,3 +2,6 @@
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
+.active-link .indicator {
+  transform: translateX(-50%) scaleX(1);
+}

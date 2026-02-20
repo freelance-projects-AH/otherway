@@ -7,7 +7,8 @@ import { FormComponent } from '../form/form.component';
 import { IconsComponent } from '../icons/icons.component';
 import { OurServiceComponent } from '../our-services/our-service/our-service.component';
 import { HereServicesComponent } from '../here-services/here-services.component';
-import { TestimonialSliderComponent } from '../../testimonials/testimonials.component';
+import { TestimonialSliderComponent } from '../testimonials/testimonials.component';
+import { IconsReverseComponent } from '../icons-reverse/icons.component';
 
 @Component({
   selector: 'app-home',
@@ -22,6 +23,7 @@ import { TestimonialSliderComponent } from '../../testimonials/testimonials.comp
     OurServiceComponent,
     HereServicesComponent,
     TestimonialSliderComponent,
+    IconsReverseComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',

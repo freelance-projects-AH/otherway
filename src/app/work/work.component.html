@@ -1,5 +1,9 @@
 <app-hero-two></app-hero-two>
+<div class="p-10 w-full flex justify-center bg-secondary text-black">
+  <h2 class="text-xl">Trusted By leading brands worldwide</h2>
+</div>
 <app-icons></app-icons>
+<app-icons-reverse></app-icons-reverse>
 <section class="px-4 py-10 bg-forth">
   <div class="flex items-center flex-col justify-center">
     <img src="/work/Projects.png" alt="Text" class="h-[100px] md:h-[150px]" />
@@ -7,12 +11,12 @@
       <button
         *ngFor="let tab of tabs"
         (click)="onTabClick(tab._id)"
-        [ngClass]="{
-          'bg-black text-primary': activeTab === tab._id,
-          'bg-transparent text-gray-700 hover:bg-gray-100':
-            activeTab !== tab._id
-        }"
-        class="px-3 py-1 rounded-lg text-sm font-medium transition-all duration-200 min-w-[80px]"
+        [ngClass]="
+          activeTab === tab._id
+            ? 'bg-primary text-black'
+            : 'bg-secondary text-black hover:bg-fontThread hover:text-white'
+        "
+        class="px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 min-w-[80px] text-black"
       >
         {{ tab.label }}
       </button>
@@ -63,7 +67,7 @@
       (click)="onPageChange(i + 1)"
       [ngClass]="{
         'bg-black text-primary': currentPage === i + 1,
-        'bg-transparent text-gray-700 hover:bg-gray-100': currentPage !== i + 1
+        'bg-transparent text-gray-700 hover:bg-gray-100': currentPage !== i + 1,
       }"
       class="px-3 py-1 rounded-lg text-sm font-medium transition-all duration-200 min-w-[80px]"
     >
@@ -79,4 +83,4 @@
     </button>
   </div>
 </section>
-<app-carousel></app-carousel>
+<app-testimonial-slider></app-testimonial-slider>

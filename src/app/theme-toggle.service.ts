@@ -2,26 +2,28 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ThemeToggleService {
-
   private isDarkMode = new BehaviorSubject<boolean>(false);
   isDarkMode$ = this.isDarkMode.asObservable();
 
   constructor() {
-      console.log('[ThemeService] constructor');
-     setTimeout(() => {
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  console.log('[ThemeService] savedTheme =', savedTheme);
-    console.log('[ThemeService] prefersDark =', prefersDark);
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-      this.enableDarkMode();
-    } else {
-      this.enableLightMode();
-    }
-  }, 0);
+    console.log('[ThemeService] constructor');
+    setTimeout(() => {
+      // const savedTheme = localStorage.getItem('theme');
+      const savedTheme = 'dark';
+      const prefersDark = window.matchMedia(
+        '(prefers-color-scheme: dark)',
+      ).matches;
+      console.log('[ThemeService] savedTheme =', savedTheme);
+      console.log('[ThemeService] prefersDark =', prefersDark);
+      if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        this.enableDarkMode();
+      } else {
+        this.enableLightMode();
+      }
+    }, 0);
   }
 
   toggleTheme(): void {

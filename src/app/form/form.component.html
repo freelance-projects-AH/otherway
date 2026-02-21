@@ -1,46 +1,67 @@
 <div
   id="crm-form"
-  class="min-h-screen bg-black flex items-center justify-center px-8  relative overflow-hidden"
-  style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;"
+  class="min-h-screen bg-black flex items-center justify-center px-8 relative overflow-hidden"
+  style="font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif"
 >
   <div class="max-w-[1300px] w-full relative z-10">
-
     <!-- Top label row -->
-    <div class="flex items-center gap-5 mb-6">
-      <span style="font-size: 0.8rem; letter-spacing: 0.05em; color:#7A7A7A;">Send us a message</span>
-      <div style="height: 1px; width: 80px; background: #f7d000;"></div>
+    <div class="flex items-center gap-5 mb-6 animate-slide-in-left">
+      <span style="font-size: 0.8rem; letter-spacing: 0.05em; color: #7a7a7a"
+        >Send us a message</span
+      >
+      <div style="height: 1px; width: 80px; background: #f7d000"></div>
     </div>
 
     <!-- Giant heading -->
-    <h1 style="
-      color: #ffffff;
-      line-height: 0.9;
-      margin-bottom: 3rem;
-      white-space: nowrap;
-    ">
-      <span style="
-        font-size: clamp(4.5rem, 11vw, 9rem);
-        font-weight: 900;
-        font-style: normal;
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        letter-spacing: -0.02em;
-      ">Enquiry </span><span style="
-        font-size: clamp(4.5rem, 11vw, 9rem);
-        font-weight: 400;
-        font-style: italic;
-        font-family: Georgia, 'Times New Roman', serif;
-        letter-spacing: -0.02em;
-      ">form</span>
+    <h1
+      style="
+        color: #ffffff;
+        line-height: 0.9;
+        margin-bottom: 3rem;
+        white-space: nowrap;
+      "
+      class="animate-slide-in-left"
+    >
+      <span
+        style="
+          font-size: clamp(4.5rem, 11vw, 9rem);
+          font-weight: 900;
+          font-style: normal;
+          font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+          letter-spacing: -0.02em;
+        "
+        >Enquiry </span
+      ><span
+        style="
+          font-size: clamp(4.5rem, 11vw, 9rem);
+          font-weight: 400;
+          font-style: italic;
+          font-family: Georgia, &quot;Times New Roman&quot;, serif;
+          letter-spacing: -0.02em;
+        "
+        >form</span
+      >
     </h1>
 
     <!-- Two-column layout -->
     <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
-
       <!-- LEFT: Info + Hello -->
-      <div class="w-full lg:w-[45%] flex flex-col" style="min-height: 300px; position: relative;">
-
-        <p style="color: #7A7A7A; font-size: 0.95rem; line-height: 1.7; max-width: 280px; margin-bottom: 1.5rem;">
-          Questions? Queries? Contact our team and we'll get back to you as soon as possible.
+      <div
+        class="w-full lg:w-[45%] flex flex-col"
+        style="min-height: 300px; position: relative"
+      >
+        <p
+          style="
+            color: #7a7a7a;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            max-width: 280px;
+            margin-bottom: 1.5rem;
+          "
+          class="animate-slide-in-left"
+        >
+          Questions? Queries? Contact our team and we'll get back to you as soon
+          as possible.
         </p>
 
         <a
@@ -54,73 +75,117 @@
             transition: color 0.2s;
             width: fit-content;
           "
-          onmouseover="this.style.color='#c9a84c'"
-          onmouseout="this.style.color='#ffffff'"
+          onmouseover="this.style.color = '#c9a84c'"
+          onmouseout="this.style.color = '#ffffff'"
+          class="animate-slide-in-left"
         >
           info&#64;snap-studio.ae
         </a>
-   <div class="flex items-center gap-5 mt-4" style="font-size: 1.2rem;">
-      <a href="https://www.behance.net/snap-studio" target="_blank" rel="noopener noreferrer"
-         style="color: #7A7A7A;" onmouseover="this.style.color='#f7d000'" onmouseout="this.style.color='#7A7A7A'">
-        <i class="fab fa-behance"></i>
-      </a>
-      <a href="https://www.facebook.com/SNAP.Studio.a" target="_blank" rel="noopener noreferrer"
-         style="color: #7A7A7A;" onmouseover="this.style.color='#f7d000'" onmouseout="this.style.color='#7A7A7A'">
-        <i class="fab fa-facebook"></i>
-      </a>
-      <a href="https://www.instagram.com/snap.studio.official/" target="_blank" rel="noopener noreferrer"
-         style="color: #7A7A7A;" onmouseover="this.style.color='#f7d000'" onmouseout="this.style.color='#7A7A7A'">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.tiktok.com/@snapstudio.ae" target="_blank" rel="noopener noreferrer"
-         style="color: #7A7A7A;" onmouseover="this.style.color='#f7d000'" onmouseout="this.style.color='#7A7A7A'">
-        <i class="fab fa-tiktok"></i>
-      </a>
-      <a href="https://x.com/SNAPStudio_" target="_blank" rel="noopener noreferrer"
-         style="color: #7A7A7A;" onmouseover="this.style.color='#f7d000'" onmouseout="this.style.color='#7A7A7A'">
-        <svg style="width: 1.1rem; height: 1.1rem;" xmlns="http://www.w3.org/2000/svg"
-             viewBox="0 0 640 640" fill="currentColor">
-          <path d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z"/>
-        </svg>
-      </a>
-    </div>
+        <div
+          class="flex items-center gap-5 mt-4 animate-slide-in-left"
+          style="font-size: 1.2rem"
+        >
+          <a
+            href="https://www.behance.net/snap-studio"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="color: #7a7a7a"
+            onmouseover="this.style.color = '#f7d000'"
+            onmouseout="this.style.color = '#7A7A7A'"
+          >
+            <i class="fab fa-behance"></i>
+          </a>
+          <a
+            href="https://www.facebook.com/SNAP.Studio.a"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="color: #7a7a7a"
+            onmouseover="this.style.color = '#f7d000'"
+            onmouseout="this.style.color = '#7A7A7A'"
+          >
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/snap.studio.official/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="color: #7a7a7a"
+            onmouseover="this.style.color = '#f7d000'"
+            onmouseout="this.style.color = '#7A7A7A'"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.tiktok.com/@snapstudio.ae"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="color: #7a7a7a"
+            onmouseover="this.style.color = '#f7d000'"
+            onmouseout="this.style.color = '#7A7A7A'"
+          >
+            <i class="fab fa-tiktok"></i>
+          </a>
+          <a
+            href="https://x.com/SNAPStudio_"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="color: #7a7a7a"
+            onmouseover="this.style.color = '#f7d000'"
+            onmouseout="this.style.color = '#7A7A7A'"
+          >
+            <svg
+              style="width: 1.1rem; height: 1.1rem"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 640 640"
+              fill="currentColor"
+            >
+              <path
+                d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z"
+              />
+            </svg>
+          </a>
+        </div>
         <!-- Hello SVG — large decorative, bottom of left column -->
-        <div style="
-          position: absolute;
-          bottom: -60px;
-          left: -30px;
-          width: 110%;
-          max-width: 580px;
-          pointer-events: none;
-          opacity: 0.95;
-        ">
+        <div
+          style="
+            position: absolute;
+            bottom: -60px;
+            left: -30px;
+            width: 110%;
+            max-width: 580px;
+            pointer-events: none;
+            opacity: 0.95;
+          "
+          class="animate-slide-in-left"
+        >
           <img
             src="/Hello White.svg"
             alt="hello"
-            style="width: 100%; display: block;"
+            style="width: 100%; display: block"
           />
         </div>
-
       </div>
 
       <!-- RIGHT: Form -->
-      <div class="w-full lg:w-[55%]">
+      <div class="w-full lg:w-[55%] animate-slide-in-right">
         <form
           [formGroup]="contactForm"
           (ngSubmit)="onSubmit()"
-          style="display: flex; flex-direction: column; gap: 2.5rem;"
+          style="display: flex; flex-direction: column; gap: 2.5rem"
         >
-
           <!-- NAME -->
           <div>
-            <label style="
-              display: block;
-              font-size: 0.7rem;
-              letter-spacing: 0.15em;
-              text-transform: uppercase;
-              color: rgba(255,255,255,0.45);
-              margin-bottom: 0.75rem;
-            ">Name *</label>
+            <label
+              style="
+                display: block;
+                font-size: 0.7rem;
+                letter-spacing: 0.15em;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, 0.45);
+                margin-bottom: 0.75rem;
+              "
+              >Name *</label
+            >
             <input
               type="text"
               formControlName="firstName"
@@ -128,7 +193,7 @@
                 width: 100%;
                 background: transparent;
                 border: none;
-                border-bottom: 1px solid rgba(255,255,255,0.2);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
                 color: #ffffff;
                 font-size: 0.95rem;
                 padding: 0.6rem 0;
@@ -136,27 +201,35 @@
                 transition: border-color 0.2s;
                 font-family: inherit;
               "
-              onfocus="this.style.borderBottomColor='#c9a84c'"
-              onblur="this.style.borderBottomColor='rgba(255,255,255,0.2)'"
+              onfocus="this.style.borderBottomColor = '#c9a84c'"
+              onblur="this.style.borderBottomColor = 'rgba(255,255,255,0.2)'"
             />
             <div
-              *ngIf="contactForm.get('firstName')?.invalid && contactForm.get('firstName')?.touched"
-              style="margin-top: 0.4rem; font-size: 0.75rem; color: #f87171;"
+              *ngIf="
+                contactForm.get('firstName')?.invalid &&
+                contactForm.get('firstName')?.touched
+              "
+              style="margin-top: 0.4rem; font-size: 0.75rem; color: #f87171"
             >
-              <span *ngIf="contactForm.get('firstName')?.errors?.['minlength']">Min 2 characters</span>
+              <span *ngIf="contactForm.get('firstName')?.errors?.['minlength']"
+                >Min 2 characters</span
+              >
             </div>
           </div>
 
           <!-- EMAIL -->
           <div>
-            <label style="
-              display: block;
-              font-size: 0.7rem;
-              letter-spacing: 0.15em;
-              text-transform: uppercase;
-              color: rgba(255,255,255,0.45);
-              margin-bottom: 0.75rem;
-            ">Email *</label>
+            <label
+              style="
+                display: block;
+                font-size: 0.7rem;
+                letter-spacing: 0.15em;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, 0.45);
+                margin-bottom: 0.75rem;
+              "
+              >Email *</label
+            >
             <input
               type="email"
               formControlName="email"
@@ -164,7 +237,7 @@
                 width: 100%;
                 background: transparent;
                 border: none;
-                border-bottom: 1px solid rgba(255,255,255,0.2);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
                 color: #ffffff;
                 font-size: 0.95rem;
                 padding: 0.6rem 0;
@@ -172,28 +245,38 @@
                 transition: border-color 0.2s;
                 font-family: inherit;
               "
-              onfocus="this.style.borderBottomColor='#c9a84c'"
-              onblur="this.style.borderBottomColor='rgba(255,255,255,0.2)'"
+              onfocus="this.style.borderBottomColor = '#c9a84c'"
+              onblur="this.style.borderBottomColor = 'rgba(255,255,255,0.2)'"
             />
             <div
-              *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
-              style="margin-top: 0.4rem; font-size: 0.75rem; color: #f87171;"
+              *ngIf="
+                contactForm.get('email')?.invalid &&
+                contactForm.get('email')?.touched
+              "
+              style="margin-top: 0.4rem; font-size: 0.75rem; color: #f87171"
             >
-              <span *ngIf="contactForm.get('email')?.errors?.['required']">Required</span>
-              <span *ngIf="contactForm.get('email')?.errors?.['email']">Please enter a valid email</span>
+              <span *ngIf="contactForm.get('email')?.errors?.['required']"
+                >Required</span
+              >
+              <span *ngIf="contactForm.get('email')?.errors?.['email']"
+                >Please enter a valid email</span
+              >
             </div>
           </div>
 
           <!-- MESSAGE -->
           <div>
-            <label style="
-              display: block;
-              font-size: 0.7rem;
-              letter-spacing: 0.15em;
-              text-transform: uppercase;
-              color: rgba(255,255,255,0.45);
-              margin-bottom: 0.75rem;
-            ">Message *</label>
+            <label
+              style="
+                display: block;
+                font-size: 0.7rem;
+                letter-spacing: 0.15em;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, 0.45);
+                margin-bottom: 0.75rem;
+              "
+              >Message *</label
+            >
             <textarea
               formControlName="message"
               rows="5"
@@ -201,7 +284,7 @@
                 width: 100%;
                 background: transparent;
                 border: none;
-                border-bottom: 1px solid rgba(255,255,255,0.2);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
                 color: #ffffff;
                 font-size: 0.95rem;
                 padding: 0.6rem 0;
@@ -210,24 +293,31 @@
                 transition: border-color 0.2s;
                 font-family: inherit;
               "
-              onfocus="this.style.borderBottomColor='#c9a84c'"
-              onblur="this.style.borderBottomColor='rgba(255,255,255,0.2)'"
+              onfocus="this.style.borderBottomColor = '#c9a84c'"
+              onblur="this.style.borderBottomColor = 'rgba(255,255,255,0.2)'"
             ></textarea>
             <div
-              *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
-              style="margin-top: 0.4rem; font-size: 0.75rem; color: #f87171;"
+              *ngIf="
+                contactForm.get('message')?.invalid &&
+                contactForm.get('message')?.touched
+              "
+              style="margin-top: 0.4rem; font-size: 0.75rem; color: #f87171"
             >
-              <span *ngIf="contactForm.get('message')?.errors?.['required']">Required</span>
+              <span *ngIf="contactForm.get('message')?.errors?.['required']"
+                >Required</span
+              >
             </div>
           </div>
 
           <!-- SUBMIT -->
-          <div style="display: flex; justify-content: flex-end; margin-top: 0.5rem;">
+          <div
+            style="display: flex; justify-content: flex-end; margin-top: 0.5rem"
+          >
             <button
               type="submit"
               [disabled]="contactForm.invalid || isLoading"
               style="
-                background:#f7d000;
+                background: #f7d000;
                 color: #000000;
                 font-weight: 700;
                 font-size: 0.75rem;
@@ -242,26 +332,59 @@
                 align-items: center;
                 gap: 0.5rem;
               "
-              onmouseover="if(!this.disabled) this.style.background='#e0be6a'"
-              onmouseout="if(!this.disabled) this.style.background='#c9a84c'"
+              onmouseover="
+                if (!this.disabled) this.style.background = '#e0be6a';
+              "
+              onmouseout="
+                if (!this.disabled) this.style.background = '#c9a84c';
+              "
             >
               <span *ngIf="!isLoading">Send Enquiry</span>
-              <span *ngIf="isLoading" style="display: flex; align-items: center; gap: 0.5rem;">
-                <svg style="animation: crm-spin 1s linear infinite; width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <circle style="opacity: 0.25;" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                  <path style="opacity: 0.75;" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+              <span
+                *ngIf="isLoading"
+                style="display: flex; align-items: center; gap: 0.5rem"
+              >
+                <svg
+                  style="
+                    animation: crm-spin 1s linear infinite;
+                    width: 16px;
+                    height: 16px;
+                  "
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    style="opacity: 0.25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  ></circle>
+                  <path
+                    style="opacity: 0.75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+                  ></path>
                 </svg>
                 Sending...
               </span>
             </button>
           </div>
-
         </form>
 
         <!-- Success -->
         <div
           *ngIf="submitSuccess"
-          style="margin-top: 1.5rem; padding: 1rem 1.25rem; border: 1px solid #c9a84c; color: #c9a84c; font-size: 0.85rem; letter-spacing: 0.05em;"
+          style="
+            margin-top: 1.5rem;
+            padding: 1rem 1.25rem;
+            border: 1px solid #c9a84c;
+            color: #c9a84c;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+          "
         >
           ✓ Your enquiry has been sent. We'll be in touch soon.
         </div>
@@ -269,11 +392,16 @@
         <!-- Error -->
         <div
           *ngIf="submitError"
-          style="margin-top: 1.5rem; padding: 1rem 1.25rem; border: 1px solid #f87171; color: #f87171; font-size: 0.85rem;"
+          style="
+            margin-top: 1.5rem;
+            padding: 1rem 1.25rem;
+            border: 1px solid #f87171;
+            color: #f87171;
+            font-size: 0.85rem;
+          "
         >
           {{ submitError }}
         </div>
-
       </div>
     </div>
   </div>
@@ -281,8 +409,12 @@
 
 <style>
   @keyframes crm-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
   button:disabled {
     opacity: 0.3 !important;
